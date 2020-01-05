@@ -9,7 +9,7 @@
 		<div class="row">
 			<div class="col-sm-9" id="back-black">
 				<h1 class="float-left" style="font-size:60px;"><?php echo utf8_encode($curso->getNome())?></h1>
-				<p style="clear:both;font-size:35px;color:white;"><?php echo $curso->getDescricao()?></p>
+				<p style="clear:both;font-size:35px;color:white;"><?php echo utf8_encode($curso->getDescricao())?></p>
 			</div>
 			<div class="col-sm-3" id="back-black">
 				<img class="img-fluid w-100" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
@@ -22,7 +22,7 @@
 				<div id="accordion">
 					<div class="card" id="back-black">
 						<div class="card-header" style="background-color:black;">
-							<button align="center" class="btn btn-lg" data-toggle="collapse" data-target="#area" aria-controls="area" style="color:white;">Modulos</button>
+							<button align="center" class="btn btn-lg w-100" data-toggle="collapse" data-target="#area" aria-controls="area" style="color:white;">Modulos</button>
 						</div> 
 						<div id="area" class="collapse" data-parent="#accordion">
 							<div class="card-body">
@@ -121,7 +121,7 @@
 					</div>
 				</div>
 			</div>
-			<?php if($curso->getPreco()>0):?>
+			<?php if($curso->getPreco()>0 && isset($_SESSION['aluno'])):?>
 				<div class="comprar" class="list-group">
 					<button style="background:black;color:white;height:100px;" class="list-group-item w-50 btn btn-lg">Adicionar a favoritos</button>
 					<form method="POST" action="<?php echo BASE	?>home/pagamentos/<?php echo $curso->getIdCurso()?>">
@@ -136,6 +136,8 @@
 						<?php endif;?>
 					</form>
 				</div>
+			<?php elseif($curso->getPreco()==0 && isset($_SESSION['aluno'])):?>
+				<button data-id-aluno="<?php echo $_SESSION['aluno']?>" data-id-curso="<?php echo $curso->getIdCurso()?>" class="btn btn-lg adicionar_curso" id="dark-blue" style="color:white;">Adicionar a Meus Cursos</button>
 			<?php endif;?>
 			<?php if(count($comentarios_curso)>0):?>
 				<h1 class="mt-5">Comentarios</h1>

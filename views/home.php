@@ -34,7 +34,11 @@
 													<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso['imagem']?>" style="height:200px;" class="w-100">
 													<div class="card-body">
 														<h5 class="card-title" align="center"><?php echo utf8_encode($curso['nome'])?></h3>
-														<!--Valor futuramente-->
+														<?php if($curso['preco']>0):?>
+															<h5 align="center">R$<?php echo $curso['preco'] ?></h5>
+														<?php else:?>
+															<h5 align="center">Gratis</h5>
+														<?php endif;?>
 													</div>
 												</div>
 											</a>
@@ -49,7 +53,11 @@
 													<img  class="card-img-top" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso['imagem']?>" style="height:200px;" class="w-100 img-fluid img-fluid">
 													<div class="card-body">
 														<h5 class="card-title" align="center"><?php echo utf8_encode($curso['nome'])?></h5>
-														<!--valor futuramente-->
+														<?php if($curso['preco']>0):?>
+															<h5 align="center">R$<?php echo $curso['preco'] ?></h5>
+														<?php else:?>
+															<h5 align="center">Gratis</h5>
+														<?php endif;?>
 													</div>
 												</div>
 											</a>
@@ -84,6 +92,11 @@
 					<img src="<?php echo BASE?>assets/imagens/cursos/<?php echo $cr['imagem']?>" class="card-img-top img-fluid" style="width:300px;height:300px;">
 					<div class="card-body">
 						<h5 align="center"><?php echo $cr['nome']?></h5>
+						<?php if($cr['preco']>0):?>
+							<h5 align="center">R$<?php echo $cr['preco'] ?></h5>
+						<?php else:?>
+							<h5 align="center">Gratis</h5>
+						<?php endif;?>
 					</div>
 				</a>
 			<?php endforeach;?>

@@ -1,8 +1,8 @@
 <div class="container">
     <div class="usuario_info">
-        Usuario logado nesse momento:<strong><?php echo $info_usuario->getNome()?></strong> - <a href="<?php echo BASE_PRINCIPAL?>">Sair</a>
+        Usuario logado nesse momento:<strong><?php echo $info_usuario->getNome()?></strong> - <a href="<?php echo BASE_PRINCIPAL?>">Sair do chat</a>
     </div>
-    <nav>
+    <nav> 
         <ul>
             
         </ul>

@@ -7,7 +7,6 @@ body{
     display: flex;
     height: 100%;
     flex-direction:column;
-    background-color: blueviolet;
 }
 nav{
     height: 50px;
@@ -60,7 +59,7 @@ nav li .nome_grupo{
     cursor:pointer;
 }
 .modal_black{
-    background-color:rgba(147, 19, 233, 0.7);
+    background-color:rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     left:0;
@@ -72,7 +71,7 @@ nav li .nome_grupo{
     width: 500px;
     padding: 20px;
     margin: 20px auto;
-    background-color: black;
+    background-color: blueviolet;
     border-radius:10px;
 }
 #lista_grupo button{
@@ -93,7 +92,7 @@ nav li .nome_grupo{
     overflow-y: auto;
 }
 .lista_usuarios{
-    width:300px;
+    width:150px;
     background:darkslateblue;
     border:2px solid black;
     margin-top:1%;

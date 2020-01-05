@@ -3,7 +3,7 @@ var chat_ead={
     activeGroup:0,
     ultimo_tempo:'',
     RequestMSG:null,
-    usuariosRequest:null,
+    usuariosRequest:null, 
     
     setarGrupo:function(id,nome){
         var found = false
@@ -19,7 +19,7 @@ var chat_ead={
                 nome:nome,
                 mensagens:[],
                 usuarios:[]
-            })
+            }) 
         }
         if(this.groups.length==1){
             this.setActiveGroup(id)
@@ -135,7 +135,7 @@ var chat_ead={
             for(var x in msgs){
                 var html="<div class='message'>"
                 html+="<div class='c_info'>"
-                html+="<span class='c_sender'>"+msgs[x].name_sender+"</span>"
+                html+="<span class='c_sender'>"+msgs[x].name_sender+"</span><br>"
                 html+="<span class='c_date'>"+msgs[x].date_sender+"</span>"
                 html+="</div>"
                 html+="<div class='c_body'>"

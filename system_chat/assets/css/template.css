@@ -3,6 +3,7 @@ body{
     height: 100vh;
     font-family: 'Courier New', Courier, monospace;
 }
+
 .container{
     display: flex;
     height: 100%;
@@ -58,6 +59,12 @@ nav li .nome_grupo{
     border: none;
     cursor:pointer;
 }
+#fechar{
+    border:none;height:50px;width:100px;
+}
+#botao{
+    background-color:black;border:none;color:white;height:50px;
+}
 .modal_black{
     background-color:rgba(0, 0, 0, 0.7);
     position: fixed;
@@ -67,13 +74,18 @@ nav li .nome_grupo{
     height: 100%;
     z-index: 99;
 }
+.botao_grupo{
+    background-color: black;
+    color: white;
+}
 .modal_area{
-    width: 500px;
+    width: 100%px;
     padding: 20px;
     margin: 20px auto;
     background-color: blueviolet;
     border-radius:10px;
 }
+
 #lista_grupo button{
     display:block;
     color:black;

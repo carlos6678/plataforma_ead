@@ -22,7 +22,7 @@ $(function(){
 
         html+='<div id="lista_grupo">Carregando...</div>'
 
-        html+="<button onclick='fechar_modal()'>Fechar</button>"
+        html+="<button id='fechar' onclick='fechar_modal()'>Fechar</button>"
         $('.modal_area').html(html)
         $('.modal_black').show()
 
@@ -30,7 +30,7 @@ $(function(){
             var html=""
 
             for(var x in json.lista_grupo){
-                html+='<button data-id='+json.lista_grupo[x].id+'>'+json.lista_grupo[x].name+'</button>'
+                html+="<button id='botao' data-id="+json.lista_grupo[x].id+">"+json.lista_grupo[x].name+"</button>"
             }
             $('#lista_grupo').html(html)
             $('#lista_grupo').find('button').click(function(){

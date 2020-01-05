@@ -1,0 +1,13 @@
+{
+	"require":{
+		"mercadopago/sdk": "0.5.2",
+		"paypal/rest-api-sdk-php": "*"
+	},
+	"autoload":{
+		"psr-4":{
+			"Controllers\\":"Controllers/",
+			"Models\\":"Models/",
+			"Core\\":"Core/"
+		}
+	}
+}

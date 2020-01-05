@@ -1,0 +1,93 @@
+body{
+	margin: 0;
+	background-color: #EEE;
+}
+h4{
+	background-color: #9400D3;
+	height: 35px;
+	line-height: 35px;
+	padding-left: 20px;
+	margin: 3px;
+}
+h4 a{
+	color: black;
+}
+h5{
+	background-color: #A020F0;
+	height: 35px;
+	line-height: 35px;
+	width: 300px;
+	padding-left: 40px;
+	margin: 3px;
+	border-radius: 5px;
+}
+select{
+	min-width: 200px;
+}
+.login{ 
+	width: 400px;
+	height: 350px;
+	background-color: #8A2BE2; 
+	margin:10% auto;
+	border-radius: 20px;
+}
+.topo{
+	height: 40px;
+	background-color: #483D8B;
+}
+.topo a{
+	text-decoration: none;
+}
+.topo a div{
+	float: left;
+	height: 40px;
+	line-height: 40px;
+	padding-right: 20px;
+	padding-left: 20px;
+	color: #FFF;
+}
+.topo a div:hover{
+	background-color: #191970;
+}
+#professor{
+	float: right;
+	margin-top:20px;
+	margin-right:-35px;
+	width: 300px;
+	height: 30px;
+	display: none;
+}
+#back-black{
+	background-color:#363636;
+}
+#dark-blue{
+	background-color:#483D8B;
+}
+#professor ul{
+	list-style: none;
+	background-color: #483D8B;
+	border:2px solid black;
+	border-radius: 10px 0px 10px 10px;
+}
+#professor li{
+	background-color: #483D8B;
+	height: 30px;
+	font-size: 20px;
+	margin: 5px;
+}
+#professor li a{
+	color: black;
+}
+#professor li:hover{
+	background-color: #191970;
+}
+.conta_usuario{
+	list-style: none;
+}
+.conta_usuario li{
+	display: inline;
+	padding-right: 10px;
+}
+#foto_perfil{
+	display: none;
+}

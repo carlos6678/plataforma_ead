@@ -1,0 +1,185 @@
+body{
+    margin:0;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+}
+.container{
+    display: flex;
+    height: 100%;
+    flex-direction:column;
+    background-color: blueviolet;
+}
+nav{
+    height: 50px;
+    background-color: darkslateblue;
+    display: flex;
+}
+section{
+    flex: 1;
+    display: flex;
+}
+footer{
+    height: 80px;
+}
+nav ul,
+nav li{
+    list-style: none;
+    margin:0;
+    padding: 0;
+}
+nav ul{
+    display: flex;
+    flex:1;
+}
+nav li{
+    flex:1;
+    line-height: 50px;
+    height: 100%;
+    text-align: center;
+    display: flex;
+}
+nav li:hover{
+    background-color:blueviolet;
+    cursor: pointer;
+}
+nav li.ativo{
+    background-color: blueviolet;
+    font-weight: bold;
+}
+nav li .sair{
+    width: 40px;
+}
+nav li .nome_grupo{
+    flex:1;
+}
+.adicionar_tab{
+    width: 50px;
+    background-color: darkslateblue;
+    font-size: 20px;
+    border: none;
+    cursor:pointer;
+}
+.modal_black{
+    background-color:rgba(147, 19, 233, 0.7);
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+.modal_area{
+    width: 500px;
+    padding: 20px;
+    margin: 20px auto;
+    background-color: black;
+    border-radius:10px;
+}
+#lista_grupo button{
+    display:block;
+    color:black;
+    font-size:15px ;
+    width: 100%;;
+    background-color:white;
+    margin: 10px ;
+    border:5px groove white;
+    cursor:pointer;
+}
+.active_group{
+    background-color:#8A2BE2 !important;
+}
+.messages{
+    flex: 1;
+    overflow-y: auto;
+}
+.lista_usuarios{
+    width:300px;
+    background:darkslateblue;
+    border:2px solid black;
+    margin-top:1%;
+    overflow-y:auto;
+    border-radius:10px;
+}
+.lista_usuarios ul,li{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.lista_usuarios li{
+    padding:3px;
+}
+.c_info{
+    margin-bottom: 5px;
+}
+.c_sender{
+    font-weight: bold;
+    font-size: 15px;
+}
+.c_date{
+    font-size: 13px;
+    color: black;
+}
+.message{
+    padding: 5px;
+    border-bottom: 1px solid black;
+}
+.c_body{
+    font-size:12;
+
+}
+.c_body img {
+    height: 200px;
+    width: 200x;
+}
+.area_sender{
+    height: 40px;
+    border:2px solid black;
+    margin:20px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+}
+#input_sender{
+    border: 0;
+    font-size: 13px;
+    color: black;
+    outline: 0;
+    padding-left: 20px;
+    flex: 1;
+
+}
+.ferramentas{
+    width: 80px;
+    display: flex;
+    cursor: pointer;
+}
+.ferramenta_sender{
+    width: 40px;
+    height: 40px;
+    background-color: white;
+}
+.imgUpload{
+    background-color:darkslateblue ;
+}
+#imagem{
+    position:absolute;
+    top: -1000px;
+}
+.progress{
+    height: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    display: none;
+    border-radius: 5px;
+}
+.progresso_barra{
+    height: 10px;
+    background-color: red;
+}
+.usuario_info{
+    height: 30px;
+    line-height: 30px;
+    font-size: 13px;
+    margin: auto;
+}

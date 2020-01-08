@@ -29,7 +29,7 @@ class LoginController extends Controller{
 	}
 	public function logout(){
 		unset($_SESSION['admin']);
-		header('Location:'.BASE);
+		header('Location:'.BASE_PRINCIPAL);
 	}
 	public function inscrever_como_professor(){
 		$dados=array(

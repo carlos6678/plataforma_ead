@@ -10,7 +10,7 @@
 			<img class="card-img-top w-100" height="400px" src="<?php echo BASE?>../assets/imagens/cursos/<?php echo $curso['imagem'];?>" border="0">
 			<div class="card-body d-sm-inline-flex" id="dark-blue">
 				<a href="<?php BASE?>home/editar/<?php echo $curso['id']?>">
-				<img class=" w-50 img-fluid" src="<?php echo BASE?>assets/imagens/editar.png">
+				<img class=" w-50 img-fluid" data-toggle="tooltip" title="Editar Curso" src="<?php echo BASE?>assets/imagens/editar.png">
 				</a>
 				<div class="w-50 d-flex align-self-center">
 					<h1 style="font-size:60px;"><?php echo utf8_encode($curso['nome'])?></h1>

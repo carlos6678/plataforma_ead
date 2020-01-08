@@ -37,9 +37,6 @@ class Professor extends Model{
 	public function getEmailProfessor(){
 		return $this->info['email'];
 	}
-	public function getSenhaProfessor(){
-		return $this->info['senha'];
-	}
 	public function getFotoProfessor(){
 		return $this->info['foto'];
 	}

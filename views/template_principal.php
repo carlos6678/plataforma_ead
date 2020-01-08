@@ -8,8 +8,8 @@
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/bootstrap.bundle.min.js"></script>
 </head> 
 <body>
-	<div class="container-fluid" style="background:#483D8B;">
-		<nav class="navbar navbar-expand-lg justify-content-center" style="background:#483D8B;">
+	<div class="container-fluid" id="dark-blue">
+		<nav class="navbar navbar-expand-lg justify-content-center" id="dark-blue">
 			<a class="navbar-brand" style="color:white;border-bottom:2px solid white;" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topo_principal">
 				<span class="line"></span>

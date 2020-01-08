@@ -6,6 +6,10 @@ h1,h2,h3,h4,h5,h6{
 }
 label{
 	color:white;
+	border-bottom: 2px solid white;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: large;
 }
 select{
 	min-width: 200px;
@@ -19,28 +23,27 @@ select{
 button{
 	border: none;
 }
-.topo{
-	height: 40px;
-	background-color: #483D8B;
+.nav-link{
+	color:white;
 }
-.topo a{
-	text-decoration: none;
+.navbar-brand{
+	color: white;
 }
-.topo a div{
+.nav-link:hover{
+	border-bottom:1px solid white;
+	color:white;
+}
+.navbar-toggler{
+	width: 50px;
+}
+.navbar-toggler .line{
+	width: 100%;
 	float: left;
-	height: 40px;
-	line-height: 40px;
-	padding-right: 20px;
-	padding-left: 20px;
-	color: #FFF;
+	height: 2px;
+	background-color: #fff;
+	margin-bottom: 5px;
 }
-.topo a div:hover{
-	background-color: #191970;
-}
-.ferramentas{
-	border: 1px solid white;
-	border-radius:10px;
-}
+
 #professor{
 	float: right;
 	margin-top:20px;

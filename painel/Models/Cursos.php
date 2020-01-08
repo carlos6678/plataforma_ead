@@ -50,34 +50,6 @@ class Cursos extends Model{
 
 		return $array;
 	}
-	public function deletarCurso($id_curso){
-		$sql="SELECT id FROM aulas id_curso=':id_curso'";
-		$sql=$this->db->prepare($sql);
-		$sql->bindValue(':id_curso',$id_curso);
-		$sql->execute();
-
-		if($sql->rowCount()>0){
-			foreach($sql->fetchAll() as $aula){
-				$sqlaula="DELETE FROM historico WHERE id_aula='".($aula['id_aula'])."'";
-				$this->db->query($sqlaula);
-
-				$sqlaula="DELETE FROM questionarios WHERE id_aula='".($aula['id_aula'])."'";
-				$this->db->query($sqlaula);
-
-				$sqlaula="DELETE FROM videos WHERE id_aula='".($aula['id_aula'])."'";
-				$this->db->query($sqlaula);
-			}
-		}
-		$sql="DELETE FROM aluno_curso WHERE id_curso='$id_curso'";
-		$this->db->query($sql);
-
-		$sql="DELETE FROM cursos WHERE id='$id_curso'";
-		$this->db->query($sql);
-
-		$sql="DELETE FROM modulos WHERE id_curso='$id_curso'";
-		$this->db->query($sql);
-
-	}
 	public function adicionarCurso($nome,$imagem,$descricao,$professor,$categoria){
 		$sql="INSERT INTO cursos SET nome=:nome,imagem=:imagem,descricao=:descricao,id_professor=:professor,id_categoria=:categoria,preco=100";
 		$sql=$this->db->prepare($sql);

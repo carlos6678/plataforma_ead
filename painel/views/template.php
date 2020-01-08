@@ -6,11 +6,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
-<body>
+<body id="back-black">
 	<div class="topo">
 		<?php if(!isset($_SESSION['aluno'])):?>
 			<a href="<?php echo BASE_PRINCIPAL?>">
-				<div>Home</div>
+				<div>Pagina inicial</div>
 			</a>
 		<?php endif;?>
 		<?php if(isset($_SESSION['admin'])):?>

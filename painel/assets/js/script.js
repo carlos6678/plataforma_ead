@@ -10,6 +10,42 @@ $(function(){
 		$('#foto_perfil').show();
 		$('#privacidade').css('display','none')
 	})
+	$(function () {
+		$('[data-toggle="tooltip"]').tooltip()
+	  })
+	let editar=document.querySelectorAll("div #editar_curso");
+	$("#edit1").on("click",function(){
+		$(editar[0]).fadeToggle()
+		for(let x in editar){
+			if(x!=0){
+				$(editar[x]).hide()
+			}
+		}
+	})
+	$("#edit2").on("click",function(){
+		$(editar[1]).fadeToggle()
+		for(let x in editar){
+			if(x!=1){
+				$(editar[x]).hide()
+			}
+		}
+	})
+	$("#edit3").on("click",function(){
+		$(editar[2]).fadeToggle()
+		for(let x in editar){
+			if(x!=2){
+				$(editar[x]).hide()
+			}
+		}
+	})
+	$("#edit4").on("click",function(){
+		$(editar[3]).fadeToggle()
+		for(let x in editar){
+			if(x!=3){
+				$(editar[x]).hide()
+			}
+		}
+	})
 })
 setInterval(login,500)
 function login(){

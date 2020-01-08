@@ -107,11 +107,6 @@ class HomeController extends Controller{
 		$dados['modulos']=$modulos->getModulos($id_curso);
 		$this->loadTemplate('editar_curso',$dados);
 	}
-	public function deletar($id_curso){
-		$cursos=new Cursos();
-		$cursos->deletarCurso($id_curso);
-		header('location:'.BASE);
-	}
 	public function deletarModulo($id_modulo){
 		$modulo=new Modulos();
 		$id_curso=$modulo->deletarModulo($id_modulo);

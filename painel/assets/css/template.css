@@ -1,25 +1,11 @@
 body{
 	margin: 0;
-	background-color: #EEE;
 }
-h4{
-	background-color: #9400D3;
-	height: 35px;
-	line-height: 35px;
-	padding-left: 20px;
-	margin: 3px;
+h1,h2,h3,h4,h5,h6{
+	color: white;
 }
-h4 a{
-	color: black;
-}
-h5{
-	background-color: #A020F0;
-	height: 35px;
-	line-height: 35px;
-	width: 300px;
-	padding-left: 40px;
-	margin: 3px;
-	border-radius: 5px;
+label{
+	color:white;
 }
 select{
 	min-width: 200px;
@@ -27,9 +13,11 @@ select{
 .login{ 
 	width: 400px;
 	height: 350px;
-	background-color: #8A2BE2; 
 	margin:10% auto;
 	border-radius: 20px;
+}
+button{
+	border: none;
 }
 .topo{
 	height: 40px;
@@ -48,6 +36,10 @@ select{
 }
 .topo a div:hover{
 	background-color: #191970;
+}
+.ferramentas{
+	border: 1px solid white;
+	border-radius:10px;
 }
 #professor{
 	float: right;

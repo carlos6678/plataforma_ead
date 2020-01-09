@@ -46,6 +46,10 @@ $(function(){
 			}
 		}
 	})
+	$("#gratis").on("click",function(){
+		$('#cobrar').toggle()
+		$("label[for=cobrar]").toggle()
+	})
 })
 setInterval(login,500)
 function login(){

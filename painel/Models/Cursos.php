@@ -35,14 +35,15 @@ class Cursos extends Model{
 
 		return $array;
 	}
-	public function adicionarCurso($nome,$imagem,$descricao,$professor,$categoria){
-		$sql="INSERT INTO cursos SET nome=:nome,imagem=:imagem,descricao=:descricao,id_professor=:professor,id_categoria=:categoria,preco=100";
+	public function adicionarCurso($nome,$imagem,$descricao,$professor,$categoria,$valor){
+		$sql="INSERT INTO cursos SET nome=:nome,imagem=:imagem,descricao=:descricao,id_professor=:professor,id_categoria=:categoria,preco=:preco";
 		$sql=$this->db->prepare($sql);
 		$sql->bindValue(':nome',$nome);
 		$sql->bindValue(':imagem',$imagem);
 		$sql->bindValue(':descricao',$descricao);
 		$sql->bindValue(':professor',$professor);
 		$sql->bindValue(':categoria',$categoria);
+		$sql->bindValue(':preco',$valor);
 		$sql->execute();
 	}
 	public function editarCurso($nome,$descricao,$id){

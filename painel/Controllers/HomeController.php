@@ -42,14 +42,18 @@ class HomeController extends Controller{
 			$descricao=addslashes($_POST['descricao']);
 			$imagem=$_FILES['imagem'];
 			$categoria=intval($_POST['categoria']);
-
+			if(!empty($_POST['gratis'])){
+				$valor=addslashes(floatval($_POST['gratis']));
+			}else{
+				$valor=addslashes(floatval($_POST['valor']));
+			}
 			if(!empty($imagem['tmp_name'])){
 				$criptyName=md5(time().rand(0,99)).'.jpg';
 				$type=array('image/jpg','image/jpeg','image/png');
 				if(in_array($imagem['type'],$type)){
 					move_uploaded_file($imagem['tmp_name'],"../assets/imagens/cursos/".$criptyName);
 					$cursos=new Cursos();
-					$cursos->adicionarCurso($nome,$criptyName,$descricao,$_SESSION['admin'],$categoria);
+					$cursos->adicionarCurso($nome,$criptyName,$descricao,$_SESSION['admin'],$categoria,$valor);
 					header('location:'.BASE);
 				}
 			}

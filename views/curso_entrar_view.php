@@ -12,7 +12,7 @@
 				<p style="clear:both;font-size:35px;color:white;"><?php echo utf8_encode($curso->getDescricao())?></p>
 			</div>
 			<div class="col-sm-3" id="back-black">
-				<img class="img-fluid w-100" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
+				<img class="w-100" style="height:200px;" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
 			</div>
 			
 			<div id="frame" class="col-sm-9 mt-3" style="clear:both;">

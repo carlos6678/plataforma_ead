@@ -35,21 +35,6 @@ class Cursos extends Model{
 
 		return $array;
 	}
-	public function getCursosInscritos($id_aluno){
-		$array=array();
-
-		$sql="SELECT id_curso FROM aluno_curso WHERE id_aluno='$id_aluno'";
-		$sql=$this->db->query($sql);
-
-		if($sql->rowCount()>0){
-			$rows=$sql->fetchAll();
-			foreach($rows as $row){
-				$array[]=$row['id_curso'];
-			}
-		}
-
-		return $array;
-	}
 	public function adicionarCurso($nome,$imagem,$descricao,$professor,$categoria){
 		$sql="INSERT INTO cursos SET nome=:nome,imagem=:imagem,descricao=:descricao,id_professor=:professor,id_categoria=:categoria,preco=100";
 		$sql=$this->db->prepare($sql);

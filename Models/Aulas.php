@@ -60,9 +60,10 @@ class Aulas extends Model{
 	}
 	public function getAula($id_aula){
 		$array=array();
-		$id_aluno=$_SESSION['aluno'];
-		$sql="SELECT tipo, (select count(*) from historico WHERE historico.id_aula=aulas.id and historico.id_aluno=$id_aluno) as assistido FROM aulas WHERE id='$id_aula'";
-		$sql=$this->db->query($sql);
+		$sql="SELECT tipo FROM aulas WHERE id=:id_aula";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(":id_aula",$id_aula);
+		$sql->execute();
 
 		if($sql->rowCount()>0){
 			$row=$sql->fetch();
@@ -78,7 +79,6 @@ class Aulas extends Model{
 				$array=$sql->fetch();
 				$array['tipo']='poll';
 			}
-			$array['assistido']=$row['assistido'];
 		}
 		return $array;
 	}

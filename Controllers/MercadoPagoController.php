@@ -26,6 +26,7 @@ class MercadoPagoController extends Controller{
                 'pending'=>BASE.'mercadoPago/analise',
                 'failure'=>BASE.'mercadoPago/cancelado'
             ),
+            'notification_url'=>BASE.'mercadoPago/notificacao/'.$id_curso,
             'auto_return'=>'all',
             'external_reference'=>$id_compra
         );
@@ -44,7 +45,9 @@ class MercadoPagoController extends Controller{
             exit;
         }
     }
-    public function notificacao(){
+    public function notificacao($id_curso){
+        $curso=new Cursos();
+        $curso->setCurso($id_curso);
         $mp=new \MP('2580563479609754','Z2AyrHuvil1uEhi2SAAA2b6tuA2kfW6c');
         $mp->sandbox_mode(true);
 
@@ -52,7 +55,12 @@ class MercadoPagoController extends Controller{
 
         if($info['status']==200){
             $array=$info['response'];
-            file_put_contents('mercado.log',print_r($array,true));
+            $referencia=$array['collection']['external_reference'];
+            $status=$array['collection']['status'];
+            if($status=="approved"){
+                $curso->LiberarCursoAluno($_SESSION['aluno'],$id_curso);
+                header('Location:'.BASE."cursos/entrar/".$id_curso);
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 <?php
 namespace Core;
-class Controller{
+abstract class Controller{
 	public function loadView($name,$dados=array()){
 		require 'views/'.$name.'.php';
 	}

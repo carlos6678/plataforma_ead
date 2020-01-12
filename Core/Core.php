@@ -1,7 +1,7 @@
 <?php
 namespace Core;
-class Core {
-	public function run(){
+abstract class Core {
+	public static function run(){
 		
 		$url = '/';
 		if(isset($_GET['url'])){

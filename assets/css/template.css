@@ -8,6 +8,15 @@
 h1,h2,h3,h4,h5,h6{
 	color:white;
 }
+input[type=radio]{
+	width: 60px;
+	height: 60px;
+	background-color: white;
+}
+.num{
+	font-size: 25px;
+	font-weight: bold;
+}
 .dropdown-menu a{
 	color: white;
 }

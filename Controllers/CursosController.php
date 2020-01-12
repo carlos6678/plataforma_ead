@@ -111,9 +111,6 @@ class CursosController extends Controller{
 				$view='curso_aula_video';
 			}elseif($dados['aula_info']['tipo']==='poll'){
 				$view='curso_aula_poll';
-				if(!isset($_SESSION['tentativas'.$id_aula])){
-					$_SESSION['tentativas'.$id_aula]=0;
-				}
 			}
 			if(isset($_POST['duvida']) && !empty($_POST['duvida'])){
 				$duvida=addslashes($_POST['duvida']);
@@ -125,11 +122,9 @@ class CursosController extends Controller{
 				$opcao=$_POST['opcao'];
 				if($opcao==$dados['aula_info']['resposta']){
 					$dados['resposta']=true;
-					$aula->marcarAssistido($id_aula);
 				}else{
 					$dados['resposta']=false;
 				}
-				$_SESSION['tentativas'.$id_aula]++;
 			}
 			$imagem=$alunos->getFoto();
 			$nome=$alunos->getNome();

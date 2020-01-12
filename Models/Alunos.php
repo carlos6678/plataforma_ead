@@ -10,6 +10,18 @@ class Alunos extends Model{
 			return false;
 		}
 	}
+	public function Historico_Compras(){
+		$array=array();
+		$sql="SELECT*FROM compras WHERE id_usuario=:id_usuario";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(":id_usuario",$_SESSION['aluno']);
+		$sql->execute();
+
+		if($sql->rowCount()>0){
+			$array=$sql->fetchAll(\PDO::FETCH_ASSOC);
+		}
+		return $array;
+	}
 	public function existe($email,$senha){
 		$sql="SELECT*FROM alunos WHERE email=:email AND senha=:senha";
 		$sql=$this->db->prepare($sql);

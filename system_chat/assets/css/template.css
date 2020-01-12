@@ -65,7 +65,7 @@ nav li .nome_grupo{
 #botao{
     background-color:black;border:none;color:white;height:50px;
 }
-.modal_black{
+.modal{
     background-color:rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;

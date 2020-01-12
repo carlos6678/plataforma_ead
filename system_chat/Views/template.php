@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php $this->loadViewInTemplate($name,$dados)?>
-    <div class="modal_black" style=display:none;>
+    <div class="modal" style=display:none;>
         <div class='modal_area'>
             ...
         </div>

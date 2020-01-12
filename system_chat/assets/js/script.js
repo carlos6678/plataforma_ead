@@ -4,10 +4,10 @@ function chat_abrir(){
 
     chat_ead.setarGrupo(id,nome)
 
-    $('.modal_black').hide()
+    $('.modal').hide()
 }
 function fechar_modal(){
-    $('.modal_black').hide()
+    $('.modal').hide()
 }
 $(function(){
     if(lista_grupo.length>0){
@@ -24,7 +24,7 @@ $(function(){
 
         html+="<button id='fechar' onclick='fechar_modal()'>Fechar</button>"
         $('.modal_area').html(html)
-        $('.modal_black').show()
+        $('.modal').show()
 
         chat_ead.carregarListaDeGrupos(function(json){
             var html=""
@@ -38,7 +38,7 @@ $(function(){
                 var nome = $(this).html()
 
                 chat_ead.setarGrupo(id,nome)
-                $('.modal_black').hide()
+                $('.modal').hide()
             })
         })
     })

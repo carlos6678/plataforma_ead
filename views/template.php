@@ -31,7 +31,7 @@
 					<img id="perfil" class="dropdown-toggle" data-toggle="dropdown" src="<?php echo BASE;?>assets/imagens/usuario.png" style="width: 60px;height: 60px;">
 				<?php endif;?>
 				<div class="dropdown-menu" style="background-color:#363636;">
-					<a href="<?php echo BASE;?>"class="dropdown-item">Historico de Compras</a> 
+					<a href="<?php echo BASE;?>home/historico_compras" class="dropdown-item">Historico de Compras</a> 
 					<a href="<?php echo BASE;?>home/conta_usuario/<?php echo $_SESSION['aluno']?>"class="dropdown-item">Conta</a>
 					<a href="<?php echo BASE;?>painel/home"class="dropdown-item">Instrutor</a>
 					<a href="<?php echo BASE;?>"class="dropdown-item">Ajuda</a>

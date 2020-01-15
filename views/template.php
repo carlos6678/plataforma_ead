@@ -3,6 +3,7 @@
 <head>
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/template.css">
 	<link rel="stylesheet" href="<?php echo BASE?>assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css"/>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE?>assets/js/bootstrap.bundle.min.js"></script>
 	<meta charset="utf-8">

@@ -4,6 +4,7 @@
 	<title>GV_EAD</title>
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/template.css"></link>
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/bootstrap.min.css"></link>
+	<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css"/>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/bootstrap.bundle.min.js"></script>
 </head> 
@@ -33,7 +34,21 @@
 	</div>
 
 	<?php $this->loadInTemplate($name,$dados)?>
-	
-	<script type="text/javascript" src="<?php echo BASE;?>assets/js/script_principal.js"></script>
+	<footer style="clear:both;">
+		<div class="rodape">
+			<div class="jumbotron">
+				<h3 class="display-4">Suporte</h3>
+				<h5>sandramariagv11@gmail.com</h5>
+				<h5>Aleixandre Peixoto e responsável por esse sistema</h5>
+				<a href="https://www.facebook.com/profile.php?id=100011563714434">
+					<img src="<?php echo BASE?>assets/imagens/facebook.jpg" style="width:50px;height:50px;">
+				</a>
+			</div>
+			<div class="jumbotron">
+				<h1>Seja um Instrutor você também</h1>
+				<a href="<?php echo BASE?>painel" class="btn btn-lg w-100">Clique aqui!</a>
+			</div>
+		</div>
+	</footer>
 </body>
 </html> 

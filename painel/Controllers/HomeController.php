@@ -196,12 +196,12 @@ class HomeController extends Controller{
 			$Professor->updateProfessor($id_professor,$nome,$email,$senha);
 			$Professor->setProfessor($id_professor);
 			header('Location:'.BASE.'home/editarContaProfessor/'.$id_professor);
-		}
-		if(isset($_FILES['foto']['tmp_name']) && !empty($_FILES['foto']['tmp_name'])){
+		} 
+		if(isset($_FILES['foto_perfil']['tmp_name']) && !empty($_FILES['foto_perfil']['tmp_name'])){
 			$cryptName=md5(time().rand(0,99)).'.jpg';
 			$types=array('image/jpeg','image/jpg','image/png');
-			if(in_array($_FILES['foto']['type'],$types)){
-				move_uploaded_file($_FILES['foto']['tmp_name'],'assets/imagens/professores/'.$cryptName);
+			if(in_array($_FILES['foto_perfil']['type'],$types)){
+				move_uploaded_file($_FILES['foto_perfil']['tmp_name'],'assets/imagens/professores/'.$cryptName);
 				$Professor->perfilProfessor($id_professor,$cryptName);
 				$Professor->setProfessor($id_professor);
 				header('Location:'.BASE.'home/editarContaProfessor/'.$id_professor);

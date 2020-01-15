@@ -2,7 +2,7 @@
 	<h1>Ferramentas</h1>
 	<div class="row">
 		<div class="col-2">
-			<img id="edit1" data-toggle="tooltip" title="Conteudo do Seu curso" style="cursor:pointer;" class="w-100 mb-3" src="<?php echo BASE?>assets/imagens/conteudo.png">
+			<img id="edit1" data-toggle="tooltip" title="Editar Conteudo do Curso" style="cursor:pointer;" class="w-100 mb-3" src="<?php echo BASE?>assets/imagens/conteudo.png">
 			<img id="edit2" data-toggle="tooltip" title="Adicionar Modulo" style="cursor:pointer;" class="w-100 mb-3" src="<?php echo BASE?>assets/imagens/editar_modulo.png">
 			<img id="edit3" data-toggle="tooltip" title="Adicionar Aula" style="cursor:pointer;" class="w-100 mb-3" src="<?php echo BASE?>assets/imagens/editar_aula.png">
 			<img id="edit4" data-toggle="tooltip" title="Editar curso" style="cursor:pointer;" class="w-100 mb-3" src="<?php echo BASE?>assets/imagens/editar_curso.png">

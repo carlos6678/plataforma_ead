@@ -9,14 +9,20 @@
 		<div class="row">
 			<div class="col-sm-9" id="back-black">
 				<h1 class="float-left" style="font-size:60px;"><?php echo utf8_encode($curso->getNome())?></h1>
+				<hr style="background-color:white;clear:both;">
 				<p style="clear:both;font-size:35px;color:white;"><?php echo utf8_encode($curso->getDescricao())?></p>
 			</div>
 			<div class="col-sm-3" id="back-black">
 				<img class="w-100" style="height:200px;" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
 			</div>
 			
-			<div id="frame" class="col-sm-9 mt-3" style="clear:both;">
-				<iframe id="video" style="width: 100%;" frameborder="0" src="//player.vimeo.com/video/379049079"></iframe>
+			<div class="col-sm-9 mt-3 plyr__video-embed" style="clear:both;">
+				<Iframe 
+				id="player" src = "https://player.vimeo.com/video/379049079?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
+					allowFullScreen 
+					allowtransparency 
+					allow="autoplay" 
+				> </iframe>
 			</div>
 			<div class="col-sm-3 mt-3" style="overflow-y:auto;height:600px;">
 				<div id="accordion">
@@ -56,7 +62,7 @@
 							<?php if(!empty($prof['foto'])):?>
 								<img src="<?php echo BASE?>painel/assets/imagens/professores/<?php echo $prof['foto']?>" class="img-fluid avatar mr-3" style="width: 60px;height: 60px;border-radius: 30px;">
 							<?php else:?>
-								<img class="img-fluid avatar mr-3" src="<?php echo BASE?>assets/imagens/<?php echo $prof['foto']?>" style="width: 40px;height: 40px;border-radius: 20px;">
+								<img class="img-fluid avatar mr-3" src="<?php echo BASE?>assets/imagens/usuario.png" style="width: 40px;height: 40px;border-radius: 20px;">
 							<?php endif;?>
 							<div class="media-body">
 								<h3><?php echo $prof['nome']?></h3>
@@ -85,7 +91,7 @@
 										}
 									?><?php echo $cursos['id']?>">
 										<div class="card" id="dark-blue">
-											<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>" style="height:200px;" class="w-100">
+											<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>" style="height:500px;">
 											<div class="card-body">
 												<h5 class="card-title" align="center"><?php echo utf8_encode($cursos['nome'])?></h3>
 											</div>
@@ -102,7 +108,7 @@
 											}
 										?><?php echo $cursos['id']?>">
 											<div class="card" id="dark-blue">
-												<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>" style="height:200px;" class="w-100">
+												<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>" style="height:500px;">
 												<div class="card-body">
 													<h5 class="card-title" align="center"><?php echo utf8_encode($cursos['nome'])?></h3>
 												</div>

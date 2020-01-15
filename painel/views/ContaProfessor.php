@@ -24,7 +24,7 @@
 						<input class="form-control" type="password" name="senha"><br><br>
 						<input class="form-control" type="submit" value="Salvar alterações" id="verificar_senha">
 					</form>
-					<button class="btn btn-dark" id="uploadFoto">Trocar foto</button>
+					<button class="btn" id="uploadFoto">Trocar foto</button>
 				</div>
 			</div>
 		</div>

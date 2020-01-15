@@ -1,18 +1,13 @@
 $(function(){
-	$('.professor').click(function(){
-		$('#professor').slideToggle('fast')
-	})
-	$('#privacidade_view').bind('click',function(){
-		$('#privacidade').show()
-		$('#foto_perfil').css('display','none')
-	})
-	$('#foto_perfil_view').bind('click',function(){
-		$('#foto_perfil').show();
-		$('#privacidade').css('display','none')
-	})
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip()
 	  })
+	$('#uploadFoto').click(function(){
+		$('#escolher').trigger('click')
+	})
+	$('#escolher').on('change',function(){
+		$('#enviar').trigger('click') 
+	})
 	let editar=document.querySelectorAll("div #editar_curso");
 	$("#edit1").on("click",function(){
 		$(editar[3]).fadeToggle()
@@ -53,17 +48,19 @@ $(function(){
 })
 setInterval(login,500)
 function login(){
-	var largura=window.innerWidth
+	var largura=screen.width
 
-	if(largura<=1024){
+	if(largura<1024){
 		$('.login').css('width','600px')
 		$('.login').css('height','350px')
 		$('#img').css('marginLeft','250px')
 		$('.login').css('marginTop','35%')
+		$('.media').css('display','block')
 	}else{
 		$('.login').css('width','400px')
 		$('.login').css('height','350px')
 		$('#img').css('marginLeft','150px')
 		$('.login').css('marginTop','10%')
+		$('.media').css('display','flex')
 	}
 }

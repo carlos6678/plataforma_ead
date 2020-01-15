@@ -4,6 +4,10 @@ body{
 h1,h2,h3,h4,h5,h6{
 	color: white;
 }
+#uploadFoto{
+	background-color: #483D8B;
+	color: white;
+}
 label{
 	color:white;
 	border-bottom: 2px solid white;

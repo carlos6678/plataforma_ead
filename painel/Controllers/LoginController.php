@@ -34,13 +34,7 @@ class LoginController extends Controller{
 	public function inscrever_como_professor(){
 		$dados=array(
 			'error'=>true,
-			'info'=>array()
 		);
-		$Professor=new Professor();
-		if(isset($_SESSION['admin'])){
-			$Professor->setProfessor($_SESSION['admin']);
-		}
-		$dados['info']=$Professor;
 		if(isset($_POST['email']) && !empty($_POST['email'])){
 			$email=addslashes($_POST['email']);
 			$senha=md5($_POST['nome']);
@@ -56,6 +50,6 @@ class LoginController extends Controller{
 			
 		}
 
-		$this->loadTemplate('cadastrar_professor',$dados);
+		$this->loadView('cadastrar_professor',$dados);
 	}
 }

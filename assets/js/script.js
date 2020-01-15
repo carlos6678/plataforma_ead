@@ -1,13 +1,6 @@
 setInterval(updateArea,500);
 function updateArea(){
 	try{
-		var ratio= 1920/1080;
-		var video_largura=$('#video').width()
-		var video_altura=video_largura/ratio
-
-		$('#video').css('width',video_largura)
-		$('#video').css('height',video_altura)
-		
 		if(window.innerWidth<=1024){
 			if(window.innerWidth<=320){
 				$('#busca').css('width','160px')
@@ -24,7 +17,7 @@ function updateArea(){
 }
 setInterval(login,500)
 function login(){
-	var largura=window.innerWidth
+	var largura=screen.width
 
 	if(largura<1024){
 		$('.login').css('width','600px')
@@ -64,7 +57,7 @@ $(function(){
 		$('#escolher').trigger('click')
 	})
 	$('#escolher').on('change',function(){
-		$('#enviar').trigger('click')
+		$('#enviar').trigger('click') 
 	})
 	$('.adicionar_curso').on('click',function(){
 		var id_aluno=$(this).attr("data-id-aluno")

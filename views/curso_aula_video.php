@@ -6,7 +6,7 @@
 </head>
 <body id="back-black"> 
 	<div class="container-fluid mt-2"> 
-		<div class="row">
+		<div class="row justify-content-center">
 			<div class="col-sm-9" id="back-black">
 				<h1 class="float-left w-100" style="font-size:60px;word-wrap:break-word;"><?php echo utf8_encode($curso->getNome())?></h1>
 				<hr style="background:white;clear:both;">
@@ -24,7 +24,7 @@
 					allow="autoplay" 
 				> </iframe>
 			</div>
-			<div class="col-sm-3 mt-3" style="overflow-y:auto;height:600px;">
+			<div class="col-sm-9 mt-5 mb-5">
 				<div id="accordion">
 					<div class="card" id="back-black">
 						<div class="card-header" style="background-color:black;">
@@ -41,10 +41,11 @@
 										<div id="area<?php echo $modulo['id']?>" class="collapse">
 											<?php foreach($modulo['aulas'] as $aula):?>
 												<?php if($modulo['id']===$aula['id_modulo']):?>
-													<div class="card-body" id="dark-blue">	<a href="<?php echo BASE?>cursos/aula/<?php echo $aula['id']?>">
+													<a class="aulas_hover" href="<?php echo BASE?>cursos/aula/<?php echo $aula['id']?>">
+														<div class="card-body" id="dark-blue">
 															<?php echo utf8_decode($aula['nome'])?>
-														</a>
-													</div>
+														</div>
+													</a>
 												<?php endif;?>
 											<?php endforeach;?>
 										</div>

@@ -29,11 +29,6 @@
 													<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso['imagem']?>" style="height:200px;" class="w-100">
 													<div class="card-body">
 														<h5 class="card-title" align="center"><?php echo utf8_encode($curso['nome'])?></h3>
-														<?php if($curso['preco']>0):?>
-															<h5 align="center">R$<?php echo $curso['preco'] ?></h5>
-														<?php else:?>
-															<h5 align="center">Gratis</h5>
-														<?php endif;?>
 													</div>
 												</div>
 											</a>
@@ -48,11 +43,6 @@
 														<img  class="card-img-top" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso['imagem']?>" style="height:200px;" class="w-100 img-fluid img-fluid">
 														<div class="card-body">
 															<h5 class="card-title" align="center"><?php echo utf8_encode($curso['nome'])?></h5>
-															<?php if($curso['preco']>0):?>
-																<h5 align="center">R$<?php echo $curso['preco'] ?></h5>
-															<?php else:?>
-																<h5 align="center">Gratis</h5>
-															<?php endif;?>
 														</div>
 													</div>
 												</a>
@@ -82,7 +72,7 @@
 								<a href="<?php echo BASE?>principal_curso/entrar_view/<?php echo $curso['id']?>" class="card float-left ml-2 mb-3" style="width:200px;height:250px;background-color:#483D8B;">
 									<?php if($categoria['id']==$curso['id_categoria']):?>
 										<div class="card-header">
-											<h5 align="center"><?php echo $curso['nome']?></h5>
+											<h5 align="center"><?php echo $categoria['categoria']?></h5>
 										</div>
 									<?php endif;?>
 
@@ -90,11 +80,7 @@
 										<img class="card-img-top img-fluid" style="height:125px;" src="<?php echo BASE?>assets/imagens/cursos/<?php echo $curso['imagem']?>">
 									<?php endif;?>
 									<div class="card-body">
-										<?php if($curso['preco']>0):?>
-											<h5 align="center">R$<?php echo $curso['preco'] ?></h5>
-										<?php else:?>
-											<h5 align="center">Gratis</h5>
-										<?php endif;?>
+										<h5 align="center"><?php echo $curso['nome']?></h5>
 									</div>
 								</a>
 							<?php endif;?>

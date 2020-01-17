@@ -1,17 +1,43 @@
 .login{ 
 	width: 400px;
-	height: 350px;
-	background-color: #8A2BE2; 
+	height: 350px; 
 	margin:10% auto;
 	border-radius: 20px;
 }
+a{
+	text-decoration: none;
+}
 h1,h2,h3,h4,h5,h6{
 	color:white;
+}
+.aulas_hover .card-body{
+	color: white;
+	background-color: #483D8B;
+	font-weight: bold;
+	font-size: 20px;
+}
+.aulas_hover:hover{
+	color: white;
+	text-decoration: none;
+}
+.aulas_hover div:hover{
+	background-color: black;
 }
 input[type=radio]{
 	width: 60px;
 	height: 60px;
 	background-color: white;
+}
+select[name=categoria]{
+	background-color: #483D8B;
+	color: black;
+	font-size: 18px;
+	color: white;
+	border: 1px solid white;
+}
+option{
+	color:white;
+	background-color: #363636;
 }
 .num{
 	font-size: 25px;

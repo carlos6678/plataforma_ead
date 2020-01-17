@@ -14,7 +14,6 @@ class HomeController extends Controller{
 	}
 	public function index(){ 
 		$dados=array(
-			'aluno_info'=>array(),
 			'cursos'=>array(),
 			'categorias'=>array(),
 			'carousel'=>array(),
@@ -139,32 +138,5 @@ class HomeController extends Controller{
 		}
 		$dados['info']=$aluno;
 		$this->loadTemplate('conta_usuario',$dados);
-	}
-	public function historico_compras(){
-		$dados=array(
-			'info'=>array(),
-			'compras'=>array()
-		);
-		$aluno = new Alunos();
-		$aluno->setAluno($_SESSION['aluno']);
-		$dados['info']=$aluno;
-		$dados['compras']=$aluno->Historico_Compras();
-
-		$this->loadTemplate("compras",$dados);
-	}
-	public function pagamentos($id_curso){ 
-		if(!empty($_POST['pagamento'])){
-			$pagamento_tipo=$_POST['pagamento'];
-			switch($pagamento_tipo){
-				case "MercadoPago":
-					header("Location:".BASE."mercadoPago/index/".$id_curso);
-					exit;
-					break;
-				case "PayPal":
-					header("location:".BASE."paypal/index/".$id_curso);
-					exit;
-					break;
-			}
-		}
 	}
 }

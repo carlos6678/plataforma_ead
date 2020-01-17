@@ -83,9 +83,6 @@ class Cursos extends Model{
 	public function getIdCurso(){
 		return $this->info['id'];
 	}
-	public function getPreco(){
-		return $this->info['preco'];
-	}
 	public function getTotalAulasCurso(){
 		$sql="SELECT id FROM aulas WHERE id_curso='".($this->getIdCurso())."'";
 		$sql=$this->db->query($sql);
@@ -189,5 +186,37 @@ class Cursos extends Model{
 		$sql->bindValue(":id_curso",$id_curso);
 		$sql->bindValue(":id_aluno",$id_aluno);
 		$sql->execute();
+	}
+	public function getNomeCategoria($id_categoria){
+		$sql="SELECT categoria FROM categorias WHERE id=:id";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(':id',$id_categoria);
+		$sql->execute();
+
+		if($sql->rowCount()>0){
+			$cat=$sql->fetch();
+			return $cat['categoria'];
+		}
+	}
+	public function getCursoPesquisado($busca,$id_categoria=0){
+		$array=array();
+		$sql='';
+		if($id_categoria==0){
+			$sql="SELECT*FROM cursos WHERE nome LIKE :busca";
+			$sql=$this->db->prepare($sql);
+			$sql->bindValue(':busca','%'.$busca.'%');
+			$sql->execute();
+		}else{
+			$sql="SELECT*FROM cursos WHERE id_categoria=:id AND nome LIKE :busca";
+			$sql=$this->db->prepare($sql);
+			$sql->bindValue(':id',$id_categoria);
+			$sql->bindValue(':busca','%'.$busca.'%');
+			$sql->execute();
+		}
+
+		if($sql->rowCount()>0){
+			$array=$sql->fetchAll(\PDO::FETCH_ASSOC);
+		}
+		return $array;
 	}
 }

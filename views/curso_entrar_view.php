@@ -6,7 +6,7 @@
 </head>
 <body id="back-black"> 
 	<div class="container-fluid mt-2"> 
-		<div class="row">
+		<div class="row justify-content-center">
 			<div class="col-sm-9" id="back-black">
 				<h1 class="float-left" style="font-size:60px;"><?php echo utf8_encode($curso->getNome())?></h1>
 				<hr style="background-color:white;clear:both;">
@@ -16,7 +16,7 @@
 				<img class="w-100" style="height:200px;" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
 			</div>
 			
-			<div class="col-sm-9 mt-3 plyr__video-embed" style="clear:both;">
+			<div class="col-sm-9 mt-5 plyr__video-embed" style="clear:both;">
 				<Iframe 
 				id="player" src = "https://player.vimeo.com/video/379049079?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
 					allowFullScreen 
@@ -24,7 +24,7 @@
 					allow="autoplay" 
 				> </iframe>
 			</div>
-			<div class="col-sm-3 mt-3" style="overflow-y:auto;height:600px;">
+			<div class="col-sm-9 mt-5 mb-5">
 				<div id="accordion">
 					<div class="card" id="back-black">
 						<div class="card-header" style="background-color:black;">
@@ -127,22 +127,8 @@
 					</div>
 				</div>
 			</div>
-			<?php if($curso->getPreco()>0 && isset($_SESSION['aluno'])):?>
-				<div class="comprar" class="list-group">
-					<button style="background:black;color:white;height:100px;" class="list-group-item w-50 btn btn-lg">Adicionar a favoritos</button>
-					<form method="POST" action="<?php echo BASE	?>home/pagamentos/<?php echo $curso->getIdCurso()?>">
-						<select name="pagamento" class="list-group-item w-50" id="dark-blue" style="color:white;height:100px;">
-							<option class="list-group-item w-50 btn btn-lg" style="background-color:black;color:white;" value="MercadoPago">MercadoPago</option>
-							<option class="list-group-item w-50 btn btn-lg" style="background-color:black;color:white;" value="PayPal">PayPal</option>
-						</select>
-						<?php if(isset($_SESSION['aluno'])):?>
-							<input class="list-group-item w-50 btn btn-lg" style="background:black;color:white;height:100px;" type="submit" value="Comprar">
-						<?php else:?>
-							<a href="#" class="list-group-item w-50 btn btn-lg" style="background:black;color:white;height:100px;line-height:100px;">Logue Para comprar</a>
-						<?php endif;?>
-					</form>
-				</div>
-			<?php elseif($curso->getPreco()==0 && isset($_SESSION['aluno'])):?>
+			
+			<?php if(isset($_SESSION['aluno']) && !empty($_SESSION['aluno'])):?>
 				<button data-id-aluno="<?php echo $_SESSION['aluno']?>" data-id-curso="<?php echo $curso->getIdCurso()?>" class="btn btn-lg adicionar_curso" id="dark-blue" style="color:white;">Adicionar a Meus Cursos</button>
 			<?php endif;?>
 			<?php if(count($comentarios_curso)>0):?>

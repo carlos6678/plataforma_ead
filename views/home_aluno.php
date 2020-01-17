@@ -15,7 +15,7 @@
 			<?php foreach($cursos_cadastrados as $cursos):?>
 			<a class="card ml-3 mb-3 w-50" id="dark-blue" href="<?php echo BASE;?>cursos/entrar/<?php echo $cursos['id']?>">
 			
-				<img class="w-100 img-card-top" src="<?php echo BASE;?>/assets/imagens/cursos/<?php echo $cursos['imagem']?>" border="0" style="width:200px;height:200px;"><br><br>
+				<img class="w-100 img-card-top" src="<?php echo BASE;?>/assets/imagens/cursos/<?php echo $cursos['imagem']?>" border="0" style="height:300px;"><br><br>
 
 				<div class="card-body">
 					<h5 align="center"><?php echo utf8_encode($cursos['nome']);?></h5>

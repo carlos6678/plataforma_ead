@@ -21,7 +21,6 @@
 			<div class="navbar-collapse collapse" id="topo_principal">
 				<div class="navbar-nav">
 					<a class="nav-item nav-link" href="<?php echo BASE?>painel/home">Instrutor</a>
-					<div class="nav-item nav-link" style="color:white;">Categorias</div>
 					<a class="nav-item nav-link" href="<?php echo BASE?>home/meus_cursos">Meus Cursos</a>
 				</div>
 			</div>
@@ -32,7 +31,6 @@
 					<img id="perfil" class="dropdown-toggle" data-toggle="dropdown" src="<?php echo BASE;?>assets/imagens/usuario.png" style="width: 60px;height: 60px;">
 				<?php endif;?>
 				<div class="dropdown-menu" style="background-color:#363636;">
-					<a href="<?php echo BASE;?>home/historico_compras" class="dropdown-item">Historico de Compras</a> 
 					<a href="<?php echo BASE;?>home/conta_usuario/<?php echo $_SESSION['aluno']?>"class="dropdown-item">Conta</a>
 					<a href="<?php echo BASE;?>painel/home"class="dropdown-item">Instrutor</a>
 					<a href="<?php echo BASE;?>"class="dropdown-item">Ajuda</a>
@@ -40,9 +38,16 @@
 					<a href="<?php echo BASE;?>login/logout"class="dropdown-item">Sair</a>
 				</div>
 			</div>
-			<form method="POST" class="form-inline">
-				<input type="search" class="form-control" name="busca" placeholder="Pesquisar"id="busca">
+
+			<form method="GET" class="form-inline" action="<?php echo BASE?>Busca">
+				<input type="search" class="form-control" name="busca" value="<?php echo (!empty($dados['busca'])?$dados['busca']:'')?>" placeholder="Pesquise aqui" id="busca" required="required">
 				<input style="background-color:white; color:black;border:none;" type="submit" class="btn btn-primary" value ="pesquisar"></input>
+				<select name="categoria" class="btn">
+					<option value="0">Todas categorias</option>
+					<?php foreach($dados['categorias'] as $categoria):?>
+						<option <?php echo (!empty($dados['categoria_ativa']) && $dados['categoria_ativa']==$categoria['id']?'selected':'')?> value="<?php echo $categoria['id']?>"><?php echo $categoria['categoria']?></option>
+					<?php endforeach;?>
+				</select>
 			</form>
 		</nav>
 	</div>

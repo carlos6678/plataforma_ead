@@ -75,7 +75,7 @@
 					<?php endforeach;?>
 
 				</div>
-				<div id="larg" class="card w-100 mt-3" style="border:none;">
+				<div class="card w-100 mt-3">
 					<div class="card-header" id="dark-blue">
 						<h1 align="center" class="mt-3"><?php echo $prof['qtCursos']?> Cursos</h1>
 					</div>
@@ -93,7 +93,7 @@
 										}
 									?><?php echo $cursos['id']?>">
 										<div class="card" id="dark-blue">
-											<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>" style="height:500px;">
+											<img  id="relacionado-img" class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>">
 											<div class="card-body">
 												<h5 class="card-title" align="center"><?php echo utf8_encode($cursos['nome'])?></h3>
 											</div>
@@ -110,7 +110,7 @@
 											}
 										?><?php echo $cursos['id']?>">
 											<div class="card" id="dark-blue">
-												<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>" style="height:500px;">
+												<img  id="relacionado-img" class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>">
 												<div class="card-body">
 													<h5 class="card-title" align="center"><?php echo utf8_encode($cursos['nome'])?></h3>
 												</div>

@@ -6,9 +6,21 @@
 }
 a{
 	text-decoration: none;
+	font-family: 'Saira Condensed', sans-serif;
+
+}
+p{
+	font-family: 'Noticia Text', serif;
+}
+button{
+	font-family: 'ZCOOL QingKe HuangYou', cursive;	
 }
 h1,h2,h3,h4,h5,h6{
 	color:white;
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+#relacionado-img{
+	height: 300px;
 }
 .aulas_hover .card-body{
 	color: white;

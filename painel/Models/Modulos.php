@@ -19,16 +19,6 @@ class Modulos extends Model{
 
 		return $array;
 	}
-	public function getModulo($id_modulo){
-		$array=array();
-		$sql="SELECT*FROM modulos WHERE id='$id_modulo'";
-		$sql=$this->db->query($sql);
-
-		if($sql->rowCount()>0){
-			$array=$sql->fetch();
-		}
-		return $array;
-	}
 	public function adicionarModulo($nome,$id_curso){
 		$this->db->query("INSERT INTO modulos SET id_curso='$id_curso',nome='$nome'");
 	}

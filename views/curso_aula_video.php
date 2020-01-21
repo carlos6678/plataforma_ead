@@ -93,7 +93,7 @@
 										}
 									?><?php echo $cursos['id']?>">
 										<div class="card" id="dark-blue">
-											<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>" style="height:500px;">
+											<img   id="relacionado-img" class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>">
 											<div class="card-body">
 												<h5 class="card-title" align="center"><?php echo utf8_encode($cursos['nome'])?></h5>
 											</div>
@@ -110,7 +110,7 @@
 											}
 										?><?php echo $cursos['id']?>">
 											<div class="card" id="dark-blue">
-												<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>" style="height:500px;">
+												<img   id="relacionado-img" class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>">
 												<div class="card-body">
 													<h5 class="card-title" align="center"><?php echo utf8_encode($cursos['nome'])?></h5>
 												</div>

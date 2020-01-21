@@ -2,6 +2,7 @@
 <html>
 <head>  
 	<title>GV_EAD</title>
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Noticia+Text|Saira+Condensed:300|ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/template.css"></link>
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/bootstrap.min.css"></link>
 	<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css"/>

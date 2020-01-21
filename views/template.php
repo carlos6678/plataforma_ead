@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html> 
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Noticia+Text|Saira+Condensed:300|ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/template.css">
 	<link rel="stylesheet" href="<?php echo BASE?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css"/>
@@ -24,7 +25,7 @@
 					<a class="nav-item nav-link" href="<?php echo BASE?>home/meus_cursos">Meus Cursos</a>
 				</div>
 			</div>
-			<div class="dropleft btn-group mr-3">
+			<div class="dropdown btn-group mr-3">
 				<?php if(!empty($dados['info']->getFoto())):?>
 					<img id="perfil" class="dropdown-toggle" data-toggle="dropdown" src="<?php echo BASE;?>assets/imagens/usuarios/<?php echo $dados['info']->getFoto()?>" style="width: 40px;height: 40px;border-radius: 20px;">
 				<?php else:?>
@@ -33,7 +34,6 @@
 				<div class="dropdown-menu" style="background-color:#363636;">
 					<a href="<?php echo BASE;?>home/conta_usuario/<?php echo $_SESSION['aluno']?>"class="dropdown-item">Conta</a>
 					<a href="<?php echo BASE;?>painel/home"class="dropdown-item">Instrutor</a>
-					<a href="<?php echo BASE;?>"class="dropdown-item">Ajuda</a>
 					<a href="http://localhost/ead/system_chat/"class="dropdown-item">Chat</a>
 					<a href="<?php echo BASE;?>login/logout"class="dropdown-item">Sair</a>
 				</div>
@@ -52,7 +52,7 @@
 		</nav>
 	</div>
 	<script>
-		var BASE="<?php echo BASE?>"
+		const BASE="<?php echo BASE?>"
 	</script>
 	<?php $this->loadInTemplate($name,$dados)?>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/script.js"></script>

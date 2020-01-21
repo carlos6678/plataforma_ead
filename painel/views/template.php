@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href="https://fonts.googleapis.com/css?family=Bangers|Noticia+Text|Saira+Condensed:300|ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/template.css"></link>
 	<link rel="stylesheet" href="<?php echo BASE?>assets/css/bootstrap.min.css"></link>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/jquery-3.4.1.min.js"></script>
@@ -52,24 +53,12 @@
 			</div>
 		</nav>
 	</div>
-
+	<script>
+		const BASE="<?php echo BASE?>"
+		const ID_CURSO="<?php echo (!empty($dados['id_curso'])?$dados['id_curso']:'')?>"
+	</script>
 	<?php $this->loadInTemplate($name,$dados)?>
+	<script type="text/javascript" src="<?php echo BASE?>assets/js/requests.js"></script>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/script.js"></script>
 </body>
 </html>
-<!--
-	<div class="professor">
-	<?php if(isset($_SESSION['admin'])):?>
-				<?php if(!empty($dados['info']->getFotoProfessor())):?>
-					<div style="float: right;"><img src="<?php echo BASE?>assets/imagens/professores/<?php echo $dados['info']->getFotoProfessor();?>" style="width: 40px;height: 40px;border-radius: 20px;"></div>
-				<?php else:?>
-					<div style="float: right;"><img src="<?php echo BASE_PRINCIPAL?>assets/imagens/usuario.png" style="width: 60px;height: 60px"></div>
-				<?php endif;?>
-			<?php endif;?>
-			<div id="professor">
-				<ul>
-					<li><a href="<?php echo BASE?>home/editarContaProfessor/<?php echo $_SESSION['admin']?>">Conta</a></li>
-					<li><a href="<?php echo BASE?>login/logout">Sair</a></li>
-				</ul>
-			</div>
-		</div>-->

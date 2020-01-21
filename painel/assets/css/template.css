@@ -1,8 +1,28 @@
 body{
 	margin: 0;
+	padding: 0;
+}
+a{
+	text-decoration: none;
+	font-family: 'Saira Condensed', sans-serif;
+
+}
+p{
+	font-family: 'Noticia Text', serif;
+}
+button{
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
+	border: none;
+}
+button[type=button]{
+	color: white;
+}
+#dropf{
+	background-color: #483D8B;
 }
 h1,h2,h3,h4,h5,h6{
-	color: white;
+	color:white;
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 #uploadFoto{
 	background-color: #483D8B;
@@ -10,7 +30,6 @@ h1,h2,h3,h4,h5,h6{
 }
 label{
 	color:white;
-	border-bottom: 2px solid white;
 	font-family: sans-serif;
 	font-weight: bold;
 	font-size: large;
@@ -23,9 +42,6 @@ select{
 	height: 350px;
 	margin:10% auto;
 	border-radius: 20px;
-}
-button{
-	border: none;
 }
 .nav-link{
 	color:white;
@@ -55,6 +71,9 @@ button{
 	width: 300px;
 	height: 30px;
 	display: none;
+}
+.card-header{
+	border:2px solid black;
 }
 #back-black{
 	background-color:#363636;

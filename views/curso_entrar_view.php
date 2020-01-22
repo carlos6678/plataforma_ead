@@ -5,12 +5,12 @@
 	<meta charset="utf-8">
 </head>
 <body id="back-black"> 
-	<div class="container-fluid mt-2"> 
+	<div class="container-fluid mt-3"> 
 		<div class="row justify-content-center">
 			<div class="col-sm-9" id="back-black">
-				<h1 class="float-left" style="font-size:60px;"><?php echo utf8_encode($curso->getNome())?></h1>
-				<hr style="background-color:white;clear:both;">
-				<p style="clear:both;font-size:35px;color:white;"><?php echo utf8_encode($curso->getDescricao())?></p>
+				<h1 class="w-100" style="font-size:60px;word-wrap:break-word;"><?php echo utf8_encode($curso->getNome())?></h1>
+				<hr style="background-color:white;">
+				<p style="font-size:35px;word-wrap:break-word;"><?php echo utf8_encode($curso->getDescricao())?></p>
 			</div>
 			<div class="col-sm-3" id="back-black">
 				<img class="w-100" style="height:200px;" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >

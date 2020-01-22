@@ -12,7 +12,7 @@
 <body>
 	<div class="container-fluid" id="dark-blue">
 		<nav class="navbar navbar-expand-lg justify-content-center" id="dark-blue">
-			<a class="navbar-brand" style="color:white;border-bottom:2px solid white;" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
+			<a class="navbar-brand logo" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topo_principal">
 				<span class="line"></span>
 				<span class="line"></span>
@@ -25,12 +25,16 @@
 					<a class="nav-item nav-link" href="<?php echo BASE?>painel/home">Instrutor</a>
 				</div>
 			</div>
-			
-			<div class="btn" style="color:white;border-bottom:2px solid white;">Categorias</div>
-			<form method="POST" class="form-inline">
-				<input type="search" class="form-control" name="busca" placeholder="Pesquisar"id="busca">
-				<input type="submit" class="form-control" value ="pesquisar"></input>
-			</form> 
+			<form method="GET" class="form-inline" action="<?php echo BASE?>Busca">
+				<input type="search" class="form-control" name="busca" value="<?php echo (!empty($dados['busca'])?$dados['busca']:'')?>" placeholder="Pesquise aqui" id="busca" required="required">
+				<input style="background-color:white;color:black;border:none;" type="submit" class="btn" value ="pesquisar"></input>
+				<select name="categoria" class="btn">
+					<option class="dropdown-item"value="0">Todas categorias</option>
+					<?php foreach($dados['categorias'] as $categoria):?>
+						<option class="w-75"<?php echo (!empty($dados['categoria_ativa']) && $dados['categoria_ativa']==$categoria['id']?'selected':'')?> value="<?php echo $categoria['id']?>"><?php echo $categoria['categoria']?></option>
+					<?php endforeach;?>
+				</select>
+			</form>
 		</nav>
 	</div>
 
@@ -51,5 +55,6 @@
 			</div>
 		</div>
 	</footer>
+	<script src="<?php echo BASE?>assets/js/script.js"></script>
 </body>
 </html> 

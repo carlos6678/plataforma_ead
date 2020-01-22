@@ -11,6 +11,7 @@ a{
 }
 p{
 	font-family: 'Noticia Text', serif;
+	color: white;
 }
 button{
 	font-family: 'ZCOOL QingKe HuangYou', cursive;	
@@ -84,8 +85,13 @@ a{
 .nav-link{
 	color: white;
 }
+.logo{
+	color: white;
+	font-weight: bold;
+}
 .nav-item{
 	margin-left: 5px;
+	font-weight: bold;
 }
 .nav-item:hover{
 	border-bottom:2px solid white ;
@@ -93,7 +99,7 @@ a{
 	font-size: 15px;
 }
 .navbar-toggler{
-	width: 50px;
+	width: 60px;
 }
 .navbar-toggler .line{
 	width: 100%;

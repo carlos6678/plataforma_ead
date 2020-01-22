@@ -15,11 +15,11 @@ function updateArea(){
 	}
  
 }
-setInterval(login,500)
-function login(){
+setInterval(ajuste,500)
+function ajuste(){
 	var largura=screen.width
 
-	if(largura<1024){
+	if(largura<=1024){
 		$('.login').css('width','600px')
 		$('.login').css('height','350px')
 		$('#img').css('marginLeft','250px')

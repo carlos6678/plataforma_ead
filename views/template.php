@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html> 
-<head>
+<head> 
 	<link href="https://fonts.googleapis.com/css?family=Bangers|Noticia+Text|Saira+Condensed:300|ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/template.css">
 	<link rel="stylesheet" href="<?php echo BASE?>assets/css/bootstrap.min.css">
@@ -11,9 +11,9 @@
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
 <body> 
-	<div class="container-fluid" style="background:#483D8B;">
-		<nav class="navbar navbar-expand-lg justify-content-center" style="background:#483D8B;">
-			<a class="navbar-brand" style="color:white;border-bottom:2px solid white;" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
+	<div class="container-fluid" id="dark-blue">
+		<nav class="navbar navbar-expand-lg justify-content-center" id="dark-blue">
+			<a class="navbar-brand" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
 			<button id="perfil_oculto" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topo_principal">
 				<span class="line"></span>
 				<span class="line"></span>
@@ -31,17 +31,16 @@
 				<?php else:?>
 					<img id="perfil" class="dropdown-toggle" data-toggle="dropdown" src="<?php echo BASE;?>assets/imagens/usuario.png" style="width: 60px;height: 60px;">
 				<?php endif;?>
-				<div class="dropdown-menu" style="background-color:#363636;">
+				<div class="dropdown-menu" id="back-black">
 					<a href="<?php echo BASE;?>home/conta_usuario/<?php echo $_SESSION['aluno']?>"class="dropdown-item">Conta</a>
 					<a href="<?php echo BASE;?>painel/home"class="dropdown-item">Instrutor</a>
 					<a href="http://localhost/ead/system_chat/"class="dropdown-item">Chat</a>
 					<a href="<?php echo BASE;?>login/logout"class="dropdown-item">Sair</a>
 				</div>
 			</div>
-
 			<form method="GET" class="form-inline" action="<?php echo BASE?>Busca">
 				<input type="search" class="form-control" name="busca" value="<?php echo (!empty($dados['busca'])?$dados['busca']:'')?>" placeholder="Pesquise aqui" id="busca" required="required">
-				<input style="background-color:white; color:black;border:none;" type="submit" class="btn btn-primary" value ="pesquisar"></input>
+				<input style="background-color:white; color:black;border:none;" type="submit" class="btn" value ="pesquisar"></input>
 				<select name="categoria" class="btn">
 					<option value="0">Todas categorias</option>
 					<?php foreach($dados['categorias'] as $categoria):?>
@@ -56,7 +55,7 @@
 	</script>
 	<?php $this->loadInTemplate($name,$dados)?>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/script.js"></script>
-	<footer style="clear:both;">
+	<footer>
 		<div class="rodape">
 			<div class="jumbotron">
 				<h3 class="display-4">Suporte</h3>

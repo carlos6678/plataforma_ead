@@ -60,13 +60,15 @@ class HomeController extends Controller{
 			'cursos_professor'=>array(),
 			'qtCursosAlunos'=>array(),
 			'qtAlunos'=>array(), 
-			'comenatarios_curso'=>array()
+			'comenatarios_curso'=>array(),
+			'categorias'=>array()
 		);
 		$alunos = new Alunos();
 		$alunos->setAluno($_SESSION['aluno']);
 		$dados['info']=$alunos;
 		$curso=new Cursos();
 		$curso->setCurso($id_curso);
+		$dados['categorias']=$curso->getCategorias();
 		$dados['curso']=$curso;
 		$dados['alunos']=$alunos;
 		$modulos=new Modulos();
@@ -108,15 +110,20 @@ class HomeController extends Controller{
 
 		$cursos=new Cursos();
 		$dados['cursos_cadastrados']=$cursos->getCursosDoAluno($_SESSION['aluno']);
+		$dados['categorias']=$cursos->getCategorias();
 
 		$this->loadTemplate('home_aluno',$dados);
 	}
 	public function conta_usuario($id_aluno){
 		$dados=array(
-			'info'=>array()
+			'info'=>array(),
+			'categorias'=>array()
 		);
 		$aluno = new Alunos();
 		$aluno->setAluno($id_aluno);
+		$cursos=new Cursos();
+		$dados['categorias']=$cursos->getCategorias();
+		
 		if(isset($_POST['nome']) && !empty($_POST['nome'])){
 			$nome=addslashes($_POST['nome']);
 			$email=addslashes($_POST['email']);

@@ -118,6 +118,14 @@ $(function(){
         }
         imgReader.readAsDataURL(state.foto)
     })
+    $('#img_curso').on('change',function(e){
+        state.foto=e.target.files[0]
+        const imgReader=new FileReader()
+        imgReader.onloadend=()=>{
+            $('#imagem_curso').attr('src',imgReader.result)
+        }
+        imgReader.readAsDataURL(state.foto)
+    })
     $('#form_curso').on('submit',function(e){
         e.preventDefault()
         var form= new FormData()
@@ -128,6 +136,8 @@ $(function(){
              url:BASE+"ajax/EditarCurso/"+ID_CURSO,
              type:'POST',
              data:form,
+             processData:false,
+             contentType:false,
              success:function(){
                  window.location.href=window.location.href
              },
@@ -160,6 +170,29 @@ $(function(){
             url:BASE+'ajax/AdicionarAula/'+ID_CURSO,
             type:'POST',
             data:form_data,
+            success:function(){
+                window.location.href=window.location.href
+            },
+            error:function(){
+                alert('Erro na requisiçao')
+            }
+        })
+    })
+    $('#form_add_curso').on('submit',function(e){
+        e.preventDefault()
+        var input=$(this).find('input')[0]
+        var text=$(this).find('textarea')[0]
+        var form= new FormData()
+        form.append('nome',$(input).val())
+        form.append('descricao',$(text).val())
+        form.append('imagem',state.foto)
+        form.append('categoria',$('#categoria_name').val())
+        $.ajax({
+            url:BASE+'ajax/AdicionarCurso/',
+            type:'POST',
+            data:form,
+            processData:false,
+            contentType:false,
             success:function(){
                 window.location.href=window.location.href
             },

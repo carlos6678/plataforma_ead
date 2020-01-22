@@ -13,7 +13,7 @@ class HomeController extends Controller{
 		}
 	}
 	public function index(){
-		$dados=array(
+		$dados=array( 
 			'cursos'=>array(),
 			'info'=>array()
 		);
@@ -28,32 +28,6 @@ class HomeController extends Controller{
 		
 		$dados['info']=$Professor;
 		$this->loadTemplate('home',$dados);
-	}
-	public function adicionar(){
-		$dados=array(
-			'info'=>array()
-		);
-		$Professor=new Professor();
-		$Professor->setProfessor($_SESSION['admin']);
-		$dados['info']=$Professor;
-		if(isset($_POST['nome'])&& !empty($_POST['nome'])){
-			$nome=addslashes($_POST['nome']);
-			$descricao=addslashes($_POST['descricao']);
-			$imagem=$_FILES['imagem'];
-			$categoria=intval($_POST['categoria']);
-			if(!empty($imagem['tmp_name'])){
-				$criptyName=md5(time().rand(0,99)).'.jpg';
-				$type=array('image/jpg','image/jpeg','image/png');
-				if(in_array($imagem['type'],$type)){
-					move_uploaded_file($imagem['tmp_name'],"../assets/imagens/cursos/".$criptyName);
-					$cursos=new Cursos();
-					$cursos->adicionarCurso($nome,$criptyName,$descricao,$_SESSION['admin'],$categoria,$valor);
-					header('location:'.BASE);
-				}
-			}
-		}
-
-		$this->loadTemplate('cadastrar_curso',$dados);
 	}
 	public function editar($id_curso){
 		$dados=array(

@@ -25,14 +25,16 @@ class CursosController extends Controller{
 			'cursos_professor'=>array(),
 			'qtCursosAlunos'=>array(),
 			'qtAlunos'=>array(), 
-			'comenatarios_curso'=>array()
+			'comenatarios_curso'=>array(),
+			'categorias'=>array()
 		);
 		$alunos = new Alunos();
 		$alunos->setAluno($_SESSION['aluno']);
 		$dados['info']=$alunos;
+		$curso=new Cursos();
+		$dados['categorias']=$curso->getCategorias();
 
 		if($alunos->EstaInscrito($id_curso)){
-			$curso=new Cursos();
 			$curso->setCurso($id_curso);
 			$dados['curso']=$curso;
 			$dados['alunos']=$alunos;
@@ -76,7 +78,8 @@ class CursosController extends Controller{
 			'cursos_professor'=>array(),
 			'qtCursosAlunos'=>array(),
 			'qtAlunos'=>array(), 
-			'comenatarios_curso'=>array()
+			'comenatarios_curso'=>array(),
+			'categorias'=>array()
 		);
 		$alunos = new Alunos();
 		$alunos->setAluno($_SESSION['aluno']);
@@ -84,10 +87,11 @@ class CursosController extends Controller{
 
 		$aula=new Aulas();
 		$id_curso=$aula->getCursoDaAula($id_aula);
-
+		$curso=new Cursos();
+		$dados['categorias']=$curso->getCategorias();
+		
 		if($alunos->EstaInscrito($id_curso)){
 			$dados['aula_info']=$aula->getAula($id_aula);
-			$curso=new Cursos();
 			$curso->setCurso($id_curso);
 			$dados['curso']=$curso;
 			$dados['alunos']=$alunos;

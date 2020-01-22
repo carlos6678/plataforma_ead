@@ -12,18 +12,19 @@
 					</button>
 				</div>
 				<div class="modal-body" id="back-black">
-					<form>
+					<form id="form_add_curso">
 						<label>Nome do Curso:</label><br>
 						<input class="form-control" type="text" name="nome" required><br><br>
 
 						<label>Descrição:</label><br>
 						<textarea class="form-control" name="descricao" required></textarea><br><br>
-
+ 
 						<label>Imagem do Curso</label><br>
-						<input type="file" name="imagem" required><br><br>
+						<input id="img_curso" type="file" name="imagem" required><br><br>
+						<img src="" id="imagem_curso" class="w-100"><br><br>
 
 						<label>Categoria</label><br>
-						<select class="form-control" name="categoria">
+						<select id="categoria_name" class="form-control" name="categoria">
 							<option class="form-control" value="1">Exatas</option>
 							<option class="form-control" value="2">Humanas</option>
 							<option class="form-control" value="3">Biologicas</option>

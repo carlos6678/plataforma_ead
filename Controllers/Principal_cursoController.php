@@ -13,7 +13,7 @@ class Principal_cursoController extends Controller{
 			'qtAlunos'=>array(),
 			'comentarios_curso'=>array(),
 			'cursos_relacionados'=>array()
-		);
+		); 
 
 		$curso=new Cursos();
 		$curso->setCurso($id_curso);

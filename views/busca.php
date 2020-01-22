@@ -16,7 +16,7 @@
         <?php endif;?>
         <div class="row mt-5">
             <?php foreach($cursos as $curso):?>
-                <a href="<?php echo BASE?>cursos/entrar/<?php echo $curso['id']?>" class="card ml-3 mb-3" id="dark-blue">
+                <a href="<?php echo BASE?><?php echo (isset($_SESSION['aluno'])?'cursos/entrar/':'principal_curso/entrar_view/')?><?php echo $curso['id']?>" class="card ml-3 mb-3" id="dark-blue">
                     <div class="card-header">
                         <h4 align="center"><?php echo $nome_categoria?></h4>
                     </div>

@@ -80,6 +80,24 @@ class AjaxController extends Controller{
 			}
 		}
     }
+    public function AdicionarCurso(){
+        if(isset($_POST['nome'])&& !empty($_POST['nome'])){
+			$nome=addslashes($_POST['nome']);
+			$descricao=addslashes($_POST['descricao']);
+			$imagem=$_FILES['imagem'];
+			$categoria=intval($_POST['categoria']);
+			if(!empty($imagem['tmp_name'])){
+				$criptyName=md5(time().rand(0,99)).'.jpg';
+				$type=array('image/jpg','image/jpeg','image/png');
+				if(in_array($imagem['type'],$type)){
+					move_uploaded_file($imagem['tmp_name'],"../assets/imagens/cursos/".$criptyName);
+					$cursos=new Cursos();
+					$cursos->adicionarCurso($nome,$criptyName,$descricao,$_SESSION['admin'],$categoria);
+					header('location:'.BASE);
+				}
+			}
+		}
+    }
     public function AdicionarModulo($id_curso){
         if(isset($_POST['Modulo']) && !empty($_POST['Modulo'])){
 			$modulo=utf8_decode(addslashes($_POST['Modulo']));

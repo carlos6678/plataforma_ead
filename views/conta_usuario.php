@@ -22,7 +22,7 @@
 						<input class="form-control" type="email" name="email" value="<?php echo $info->getEmail()?>"><br><br>
 						<label>Nova senha:</label><br>
 						<input class="form-control" type="password" name="senha"><br><br>
-						<input class="form-control" type="submit" value="Salvar alterações" id="verificar_senha">
+						<input class="form-control" type="submit" value="Salvar alterações">
 					</form>
 					<button class="btn btn-dark" id="uploadFoto">Trocar foto</button>
 				</div>

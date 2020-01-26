@@ -24,6 +24,14 @@ h1,h2,h3,h4,h5,h6{
 	color:white;
 	font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
+#img{
+	margin-left: 250px;
+	width:120px;
+	height:120px;
+	border-radius:60px;
+	position:absolute;
+	margin-top:-90px;
+}
 #uploadFoto{
 	background-color: #483D8B;
 	color: white;
@@ -38,9 +46,9 @@ select{
 	min-width: 200px;
 }
 .login{ 
-	width: 400px;
-	height: 350px;
-	margin:10% auto;
+	width: 600px;
+	height: 350px; 
+	margin:15% auto;
 	border-radius: 20px;
 }
 .nav-link{

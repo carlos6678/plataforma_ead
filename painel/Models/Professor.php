@@ -40,8 +40,11 @@ class Professor extends Model{
 	public function getFotoProfessor(){
 		return $this->info['foto'];
 	}
-	public function updateProfessor($id_professor,$nome,$email,$senha){
-		$this->db->query("UPDATE professor SET nome='$nome',email='$email',senha='$senha' WHERE id='$id_professor'");
+	public function getDescricao(){
+		return $this->info['descricao'];
+	}
+	public function updateProfessor($id_professor,$nome,$email,$descricao,$senha){
+		$this->db->query("UPDATE professor SET nome='$nome',email='$email',descricao='$descricao',senha='$senha' WHERE id='$id_professor'");
 	}
 	public function perfilProfessor($id_professor,$imagem){
 		$this->db->query("UPDATE professor SET foto='$imagem' WHERE id='$id_professor'");

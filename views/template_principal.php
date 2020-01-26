@@ -26,14 +26,14 @@
 				</div>
 			</div>
 			<form method="GET" class="form-inline" action="<?php echo BASE?>Busca">
-				<input type="search" class="form-control" name="busca" value="<?php echo (!empty($dados['busca'])?$dados['busca']:'')?>" placeholder="Pesquise aqui" id="busca" required="required">
-				<input style="background-color:white;color:black;border:none;" type="submit" class="btn" value ="pesquisar"></input>
 				<select name="categoria" class="btn">
 					<option class="dropdown-item"value="0">Todas categorias</option>
 					<?php foreach($dados['categorias'] as $categoria):?>
 						<option class="w-75"<?php echo (!empty($dados['categoria_ativa']) && $dados['categoria_ativa']==$categoria['id']?'selected':'')?> value="<?php echo $categoria['id']?>"><?php echo $categoria['categoria']?></option>
 					<?php endforeach;?>
 				</select>
+				<input type="search" class="form-control" name="busca" value="<?php echo (!empty($dados['busca'])?$dados['busca']:'')?>" placeholder="Pesquise aqui" id="busca" required="required">
+				<input style="background-color:white;color:black;border:none;" type="submit" class="btn" value ="pesquisar"></input>
 			</form>
 		</nav>
 	</div>

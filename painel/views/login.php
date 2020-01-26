@@ -9,7 +9,7 @@
 <body id="back-black">
 	<div class="container"> 
 		<div class="login" id="dark-blue"> 
-			<img id="img" src="<?php echo BASE_PRINCIPAL?>assets/imagens/login.jpg" style="width:120px;height:120px;border-radius:60px;position:absolute;margin-left:150px;margin-top:-90px;">
+			<img id="img" src="<?php echo BASE_PRINCIPAL?>assets/imagens/login.jpg">
 			<form method='POST' class="form-group pt-5">
 				<input type="email" name="email" placeholder="E-mail" required="required" class="form-control form-control-lg"><br><br>
 				<input type="password" name="senha" placeholder="******" required="required" class="form-control form-control-lg"><br><br>

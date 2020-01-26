@@ -5,16 +5,35 @@
 </head>
 <body id="back-black">
 	<div class="container"> 
-		<div class="row mt-2">
+		<div class="row">
 			<div class="col-sm-12 d-flex justify-content-center">
-				<img class="w-50" src="<?php echo BASE?>assets/imagens/animado.gif">
+				<div class="jumbotron mt-5" id="dark-blue">
+					<h1 class="display-4">PEIXOTAO_EAD</h1>
+					<p class="lead">Essa plataforma foi criada para facilitar o trabalho dos professores, Mas tambem foi pensada no aluno, que por sua vez pode tirar suas duvidas com o professor atraves dessa plataforma
+					</p>
+					<hr style="background-color:white;"> 
+					<h1 class="display-4">Aviso</h1>
+					<ul class="list-group">
+						<li class="list-group-item d-flex justify-content-between" id="back-black">
+							<p class="lead">Precisa estar logado para ver os videos e materiais da plataforma</p>
+							<a class="btn d-flex align-self-center" href="<?php echo BASE?>login/cadastro" id="dark-blue" style="color:white;font-weight:bold">Cadastrar</a>
+						</li>
+						<li class="list-group-item d-flex justify-content-between" id="back-black">
+							<p class="lead">Qualquer um pode ser um instrutor</p>
+							<a class="btn d-flex align-self-center" href="<?php echo BASE?>painel/home" id="dark-blue" style="color:white;font-weight:bold">Clique aqui</a>
+						</li>
+						<li class="list-group-item" id="back-black">
+							<p class="lead">Sistema de chat integrado para interagir com amigos</p>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 		<h1>Destaques</h1>
 		<div class="row justify-content-between">
 			<?php foreach($categorias as $key=>$categoria):?>
 				<div class="col-sm-3">
-					<div class="slide carousel ml-2" data-ride="carousel" data-interval="5000" id="cursoSlide<?php echo $key?>" style="width:250px;">
+					<div class="slide carousel ml-3" data-ride="carousel" data-interval="5000" id="cursoSlide<?php echo $key?>" style="width:250px;">
 						
 						<div class="carousel-inner">
 							<?php foreach($carousel[$key] as $key1=>$curso):?>
@@ -65,10 +84,10 @@
 		<div class="row">
 			<?php foreach($categorias as $categoria):?>
 				<h1><?php echo $categoria['categoria']?></h1>
-				<div style="overflow-y:auto;height:350px;" class="w-100">
+				<div style="overflow-y:auto;height:270px;" class="w-100 d-flex">
 					<?php foreach($cursos as $curso):?>
 						<?php if($categoria['id']==$curso['id_categoria']):?>
-							<a href="<?php echo BASE?>principal_curso/entrar_view/<?php echo $curso['id']?>" class="card float-left ml-2 mb-3" style="width:200px;height:250px;background-color:#483D8B;">
+							<a href="<?php echo BASE?>principal_curso/entrar_view/<?php echo $curso['id']?>" class="card ml-2 mb-3" style="width:200px;height:250px;background-color:#483D8B;">
 								<?php if($categoria['id']==$curso['id_categoria']):?>
 									<div class="card-header">
 										<h5 align="center"><?php echo $categoria['categoria']?></h5>

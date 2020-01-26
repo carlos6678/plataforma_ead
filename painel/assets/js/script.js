@@ -21,21 +21,13 @@ $(function(){
         imgReader.readAsDataURL(state.foto)
 	})
 })
-setInterval(login,500)
-function login(){
+setInterval(Media,500)
+function Media(){
 	var largura=screen.width
 
 	if(largura<1024){
-		$('.login').css('width','600px')
-		$('.login').css('height','350px')
-		$('#img').css('marginLeft','250px')
-		$('.login').css('marginTop','35%')
 		$('.media').css('display','block')
 	}else{
-		$('.login').css('width','400px')
-		$('.login').css('height','350px')
-		$('#img').css('marginLeft','150px')
-		$('.login').css('marginTop','10%')
 		$('.media').css('display','flex')
 	}
 }

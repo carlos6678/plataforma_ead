@@ -15,7 +15,8 @@
 			<div class="col-sm-3" id="back-black">
 				<img class="w-100" style="height:200px;" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
 			</div>
-			
+
+
 			<div class="col-sm-9 mt-5 plyr__video-embed" style="clear:both;">
 				<Iframe 
 				id="player" src = "https://player.vimeo.com/video/379049079?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
@@ -54,7 +55,15 @@
 					</div>
 				</div>
 			</div>
+	
 			<div class="col-sm-9">
+				<div class="add_curso mb-3">
+					<h1>Adicione para ver as aulas</h1>
+						<?php if(isset($_SESSION['aluno']) && !empty($_SESSION['aluno'])):?>
+							<button data-id-aluno="<?php echo $_SESSION['aluno']?>" data-id-curso="<?php echo $curso->getIdCurso()?>" class="btn btn-lg adicionar_curso" style="color:white;background-color:black;height:80px;font-size:25px;">Clique aqui</button>
+						<?php endif;?>
+				</div>
+
 				<div class="jubotron w-100" style="border:3px solid black;color:white;background-color:#1C1C1C;">
 					<h1 class="display-4">Descrição do Professor</h1>
 					<?php foreach($professor as $prof):?>
@@ -128,9 +137,6 @@
 				</div>
 			</div>
 			
-			<?php if(isset($_SESSION['aluno']) && !empty($_SESSION['aluno'])):?>
-				<button data-id-aluno="<?php echo $_SESSION['aluno']?>" data-id-curso="<?php echo $curso->getIdCurso()?>" class="btn btn-lg adicionar_curso" id="dark-blue" style="color:white;">Adicionar a Meus Cursos</button>
-			<?php endif;?>
 			<?php if(count($comentarios_curso)>0):?>
 				<h1 class="mt-5">Comentarios</h1>
 				<?php foreach($comentarios_curso as $comentario):?>

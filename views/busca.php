@@ -6,7 +6,11 @@
 <body id="back-black">
 	<div class="container-fluid mt-3">
 		<div class="row justify-content-center" id="dark-blue">
-			<img class="w-25" src="<?php echo BASE?>assets/imagens/home.png">
+            <?php if(empty($info->getFoto())):?>
+				<img class="w-25" src="<?php echo BASE?>assets/imagens/home.png">
+			<?php else:?>
+				<img style="height:300px;width:300px;border-radius:150px;" src="<?php echo BASE?>assets/imagens/usuarios/<?php echo $info->getFoto()?>">
+			<?php endif;?>
         </div>
 
         <?php if(empty($cursos)):?>

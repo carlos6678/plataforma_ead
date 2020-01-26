@@ -1,24 +1,31 @@
 .login{ 
-	width: 400px;
+	width: 600px;
 	height: 350px; 
-	margin:10% auto;
+	margin:15% auto;
 	border-radius: 20px;
 }
 a{
 	text-decoration: none;
 	font-family: 'Saira Condensed', sans-serif;
-
 }
 p{
 	font-family: 'Noticia Text', serif;
 	color: white;
 }
 button{
-	font-family: 'ZCOOL QingKe HuangYou', cursive;	
+	font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
 h1,h2,h3,h4,h5,h6{
 	color:white;
 	font-family: 'ZCOOL QingKe HuangYou', cursive;
+}
+#img{ 
+	margin-left: 250px;
+	width:120px;
+	height:120px;
+	border-radius:60px;
+	position:absolute;
+	margin-top:-90px;
 }
 #relacionado-img{
 	height: 300px;
@@ -85,6 +92,15 @@ a{
 .nav-link{
 	color: white;
 }
+.add_curso{
+	border:3px groove black;
+	background-color: #483D8B;
+	display: flex;
+	flex-direction: column;
+}
+.add_curso h1{
+	align-self: center;
+}
 .logo{
 	color: white;
 	font-weight: bold;
@@ -131,4 +147,19 @@ a{
 }
 .rodape .list-group-item{
 	background-color:black;
+}
+@media only screen and (max-width:1024px){
+	#busca{
+		width:200px;
+	}
+}
+@media only screen and (max-width:320px){
+	#busca{
+		width: 150px;
+	}
+}
+@media only screen and (min-width:1023px){
+	#busca{
+		width: 300px;
+	}
 }

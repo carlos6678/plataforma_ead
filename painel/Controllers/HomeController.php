@@ -57,8 +57,9 @@ class HomeController extends Controller{
 			$nome=addslashes($_POST['nome']);
 			$email=addslashes($_POST['email']);
 			$senha=md5($_POST['senha']);
+			$descricao=addslashes($_POST['descricao']);
 
-			$Professor->updateProfessor($id_professor,$nome,$email,$senha);
+			$Professor->updateProfessor($id_professor,$nome,$email,$descricao,$senha);
 			$Professor->setProfessor($id_professor);
 			header('Location:'.BASE.'home/editarContaProfessor/'.$id_professor);
 		} 
@@ -67,10 +68,15 @@ class HomeController extends Controller{
 			$types=array('image/jpeg','image/jpg','image/png');
 			if(in_array($_FILES['foto_perfil']['type'],$types)){
 				move_uploaded_file($_FILES['foto_perfil']['tmp_name'],'assets/imagens/professores/'.$cryptName);
+
+				if(!empty($Professor->getFotoProfessor())){
+					unlink($_SERVER['DOCUMENT_ROOT'].'/ead/painel/assets/imagens/professores/'.$Professor->getFotoProfessor());
+				}
+
 				$Professor->perfilProfessor($id_professor,$cryptName);
 				$Professor->setProfessor($id_professor);
 				header('Location:'.BASE.'home/editarContaProfessor/'.$id_professor);
-			}
+			} 
 		}
 		$dados['info']=$Professor;
 		$this->loadTemplate('ContaProfessor',$dados); 

@@ -173,7 +173,7 @@ class Cursos extends Model{
 
 		if($sql->rowCount()>0){
 			$array=$sql->fetchAll();
-			return $array;
+			return $array; 
 		}
 		return $array;
 	} 

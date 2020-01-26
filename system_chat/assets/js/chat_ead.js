@@ -15,7 +15,7 @@ var chat_ead={
         }
         if(found==false){
             this.groups.push({
-                id:id,
+                id:id, 
                 nome:nome,
                 mensagens:[],
                 usuarios:[]

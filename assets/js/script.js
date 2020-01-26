@@ -1,35 +1,10 @@
-setInterval(updateArea,500);
-function updateArea(){
-	try{
-		if(window.innerWidth<=1024){
-			if(window.innerWidth<=320){
-				$('#busca').css('width','160px')
-			}else{
-				$('#busca').css('width','200px')
-			}
-		}else{
-			$('#busca').css('width','500px')
-		}
-	}catch(e){
-		//gtdhfffygftfyufttffddgfdfghfgffghf
-	}
- 
-}
-setInterval(ajuste,500)
-function ajuste(){
+setInterval(Media,500)
+function Media(){
 	var largura=screen.width
 
 	if(largura<=1024){
-		$('.login').css('width','600px')
-		$('.login').css('height','350px')
-		$('#img').css('marginLeft','250px')
-		$('.login').css('marginTop','35%')
 		$('.media').css('display','block')
 	}else{
-		$('.login').css('width','400px')
-		$('.login').css('height','350px')
-		$('#img').css('marginLeft','150px')
-		$('.login').css('marginTop','10%')
 		$('.media').css('display','flex')
 	}
 }
@@ -42,7 +17,7 @@ $(function(){
 	$('#Cursos').on('click',function(){
 		$('.cursos').slideToggle()
 		$('.desq').hide()
-	})
+	}) 
 	$('#perfil_oculto').on('click',function(){
 		$('#perfil').toggle() 
 	})

@@ -9,11 +9,11 @@
 	<script type="text/javascript" src="<?php echo BASE?>assets/js/bootstrap.bundle.min.js"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
-</head>
+</head> 
 <body> 
 	<div class="container-fluid" id="dark-blue">
 		<nav class="navbar navbar-expand-lg justify-content-center" id="dark-blue">
-			<a class="navbar-brand" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
+			<a class="navbar-brand logo" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
 			<button id="perfil_oculto" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topo_principal">
 				<span class="line"></span>
 				<span class="line"></span>
@@ -25,7 +25,7 @@
 					<a class="nav-item nav-link" href="<?php echo BASE?>home/meus_cursos">Meus Cursos</a>
 				</div>
 			</div>
-			<div class="dropdown btn-group mr-3">
+			<div class="dropleft btn-group mr-3">
 				<?php if(!empty($dados['info']->getFoto())):?>
 					<img id="perfil" class="dropdown-toggle" data-toggle="dropdown" src="<?php echo BASE;?>assets/imagens/usuarios/<?php echo $dados['info']->getFoto()?>" style="width: 40px;height: 40px;border-radius: 20px;">
 				<?php else:?>
@@ -39,14 +39,14 @@
 				</div>
 			</div>
 			<form method="GET" class="form-inline" action="<?php echo BASE?>Busca">
-				<input type="search" class="form-control" name="busca" value="<?php echo (!empty($dados['busca'])?$dados['busca']:'')?>" placeholder="Pesquise aqui" id="busca" required="required">
-				<input style="background-color:white; color:black;border:none;" type="submit" class="btn" value ="pesquisar"></input>
 				<select name="categoria" class="btn">
 					<option value="0">Todas categorias</option>
 					<?php foreach($dados['categorias'] as $categoria):?>
 						<option <?php echo (!empty($dados['categoria_ativa']) && $dados['categoria_ativa']==$categoria['id']?'selected':'')?> value="<?php echo $categoria['id']?>"><?php echo $categoria['categoria']?></option>
 					<?php endforeach;?>
 				</select>
+				<input type="search" class="form-control" name="busca" value="<?php echo (!empty($dados['busca'])?$dados['busca']:'')?>" placeholder="Pesquise aqui" id="busca" required="required">
+				<input style="background-color:white; color:black;border:none;" type="submit" class="btn" value ="pesquisar"></input>
 			</form>
 		</nav>
 	</div>

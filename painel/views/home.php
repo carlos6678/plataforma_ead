@@ -38,7 +38,7 @@
 	</div>
  
 	<?php foreach($cursos as $curso):?>
-		<div class="card w-100 mb-5" style="border:none;">
+		<div class="card w-75 mb-5" style="border:none;">
 			<div class="card-header" id="dark-blue">
 				<h3>Alunos:<?php echo utf8_encode($curso['qtAlunos'])?></h3>
 			</div>

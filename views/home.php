@@ -6,7 +6,11 @@
 <body id="back-black">
 	<div class="container-fluid mt-3">
 		<div class="row justify-content-center" id="dark-blue">
-			<img class="w-25" src="<?php echo BASE?>assets/imagens/home.png">
+			<?php if(empty($info->getFoto())):?>
+				<img class="w-25" src="<?php echo BASE?>assets/imagens/home.png">
+			<?php else:?>
+				<img style="height:300px;width:300px;border-radius:150px;" src="<?php echo BASE?>assets/imagens/usuarios/<?php echo $info->getFoto()?>">
+			<?php endif;?>
 		</div>
 		<div class="row">
 			<div class="list-group list-group-horizontal">
@@ -69,8 +73,8 @@
 		<div class="row justify-content-center cursos">
 			<nav>
 				<ul class="pagination">
-					<?php for($pagina=1;$pagina<=$total_regs;$pagina++):?>
-						<li class="page-item"><a style="color:white;" id="dark-blue" class="page-link" href="?pagina=<?php echo $pagina?>"><?php echo $pagina?></a></li>
+					<?php for($page=0;$page<=$total_regs;$page++):?>
+						<li class="page-item"><a style="color:white;" id="dark-blue" class="page-link" href="?pagina=<?php echo $page?>"><?php echo $page+1?></a></li>
 					<?php endfor;?>
 				</ul>
 			</nav>

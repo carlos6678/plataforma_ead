@@ -1,7 +1,15 @@
 <?php
 namespace Core;
-abstract class Core {
-	public static function run(){
+class Core {
+	private static $instancia=null;
+
+	public static function getInstance(){
+		if(static::$instancia==null){
+			static::$instancia=new Core();
+		}
+		return static::$instancia;
+	}
+	public function run(){
 		
 		$url = '/';
 		if(isset($_GET['url'])){

@@ -28,12 +28,11 @@ class HomeController extends Controller{
 		$cursos=new Cursos();
 		//inicia a paginaçao
 		$total_reg=3;
-		$pagina=1;
+		$pagina=0;
 		if(isset($_GET['pagina']) && !empty($_GET['pagina'])){
 			$pagina=$_GET['pagina'];
 		}
-		$inicio=$pagina-1; 
-		$inicio=$inicio*$total_reg;
+		$inicio=$pagina*$total_reg; 
 		$dados['total_regs']=$cursos->contarRegistrosCursos()/$total_reg;
 		$dados['curso_paginaçao']=$cursos->paginaçao($inicio,$total_reg);
 		//termina paginaçao
@@ -121,12 +120,13 @@ class HomeController extends Controller{
 		);
 		$aluno = new Alunos();
 		$aluno->setAluno($id_aluno);
+		$dados['info']=$aluno;
 		$cursos=new Cursos();
 		$dados['categorias']=$cursos->getCategorias();
 		
 		if(isset($_POST['nome']) && !empty($_POST['nome'])){
 			$nome=addslashes($_POST['nome']);
-			$email=addslashes($_POST['email']);
+			$email=addslashes($_POST['email']); 
 			$senha=md5($_POST['senha']); 
 
 			$aluno->updateAluno($id_aluno,$nome,$email,$senha);
@@ -138,12 +138,16 @@ class HomeController extends Controller{
 			$types=array('image/jpeg','image/jpg','image/png');
 			if(in_array($_FILES['foto_perfil']['type'],$types)){
 				move_uploaded_file($_FILES['foto_perfil']['tmp_name'],'assets/imagens/usuarios/'.$cryptName);
+				
+				if(!empty($aluno->getFoto())){
+					unlink($_SERVER['DOCUMENT_ROOT'].'/ead/assets/imagens/usuarios/'.$aluno->getFoto());
+				}
+
 				$aluno->perfilAluno($id_aluno,$cryptName);
 				$aluno->setAluno($id_aluno);
 				header('Location:'.BASE.'home/conta_usuario/'.$id_aluno);
 			}
 		}
-		$dados['info']=$aluno;
 		$this->loadTemplate('conta_usuario',$dados);
 	}
 }

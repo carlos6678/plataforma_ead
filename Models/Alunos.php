@@ -94,4 +94,17 @@ class Alunos extends Model{
 	public function perfilAluno($id_aluno,$imagem){
 		$this->db->query("UPDATE alunos SET foto_perfil='$imagem' WHERE id='$id_aluno'");
 	}
+	public function ja_classificou($id_curso,$id_aluno){
+		$sql="SELECT*FROM classificacao WHERE id_curso=:id_curso AND id_aluno=:id_aluno";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(':id_curso',$id_curso);
+		$sql->bindValue(':id_aluno',$id_aluno);
+		$sql->execute();
+
+		if($sql->rowCount()>0){
+			return true;
+		}else{
+			return false;
+		}
+	}
 }

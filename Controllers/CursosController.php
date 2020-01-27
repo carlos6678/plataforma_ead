@@ -26,13 +26,15 @@ class CursosController extends Controller{
 			'qtCursosAlunos'=>array(),
 			'qtAlunos'=>array(), 
 			'comenatarios_curso'=>array(),
-			'categorias'=>array()
+			'categorias'=>array(),
+			'ja_classificou'=>null
 		);
 		$alunos = new Alunos();
 		$alunos->setAluno($_SESSION['aluno']);
 		$dados['info']=$alunos;
 		$curso=new Cursos();
 		$dados['categorias']=$curso->getCategorias();
+		$dados['ja_classificou']=$alunos->ja_classificou($id_curso,$_SESSION['aluno']);
 
 		if($alunos->EstaInscrito($id_curso)){
 			$curso->setCurso($id_curso);

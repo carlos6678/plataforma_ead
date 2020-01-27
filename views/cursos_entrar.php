@@ -130,7 +130,20 @@
 				</div>
 			</div>
 			
-			<h1 class="mt-5">O que acha do curso?</h1>
+			<?php if($ja_classificou==false):?>
+				<h1 class="mt-5">Classifique</h1>
+				<div class="col-sm-12 mb-5" id="classificar" id-curso=<?php echo $curso->getIdCurso()?>>
+					<img class="classificacao" src="<?php echo BASE?>assets/imagens/Preta.png">
+					<img class="classificacao" src="<?php echo BASE?>assets/imagens/Preta.png">
+					<img class="classificacao" src="<?php echo BASE?>assets/imagens/Preta.png">
+					<img class="classificacao"   src="<?php echo BASE?>assets/imagens/Preta.png">
+					<img class="classificacao" src="<?php echo BASE?>assets/imagens/Preta.png">
+					<button id="envie_class" class="btn btn-lg btn-dark">Enviar</button>
+				</div>
+			<?php else:?>
+				<h1 class="mt-5">Você Já classificou esse curso</h1>
+			<?php endif;?>
+			
 			<div id="adicionar_comentario">
 				<form method="POST">
 					<label style="font-size: 50px;color:white;">Comente:</label><br>

@@ -219,4 +219,34 @@ class Cursos extends Model{
 		}
 		return $array;
 	}
+	public function InserirClassificacao($id_curso,$classificacao,$id_aluno){
+		$sql="INSERT INTO classificacao SET id_curso=:id_curso,c_val=:classificacao,id_aluno=:id_aluno";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(':id_curso',$id_curso);
+		$sql->bindValue(':classificacao',$classificacao);
+		$sql->bindValue(':id_aluno',$id_aluno);
+		$sql->execute();
+		return $this;
+	}
+	public function mediaClass($id_curso){
+		$sql="SELECT COUNT(*) as qt,SUM(c_val) as total FROM classificacao WHERE id_curso=:id_curso";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(':id_curso',$id_curso);
+		$sql->execute();
+
+		if($sql->rowCount()>0){
+			$sql=$sql->fetch();
+			$qt=$sql['qt'];
+			$total=$sql['total'];
+			$this->InserirClassificacaoCurso(intval($qt),intval($total),$id_curso);
+		}
+	}
+	private function InserirClassificacaoCurso($qt,$total,$id_curso){
+		$classificacao=intval(floor($total/$qt));
+		$sql="UPDATE cursos SET classificacao=:classificacao WHERE id=:id_curso";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(':classificacao',$classificacao);
+		$sql->bindValue(':id_curso',$id_curso);
+		$sql->execute();
+	}
 }

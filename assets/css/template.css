@@ -19,6 +19,14 @@ h1,h2,h3,h4,h5,h6{
 	color:white;
 	font-family: 'ZCOOL QingKe HuangYou', cursive;
 }
+.classificacao{
+	width: 15%;
+	height: 100px;
+}
+#envie_class{
+	display: none;
+	background-color: #483D8B;
+}
 #img{ 
 	margin-left: 250px;
 	width:120px;

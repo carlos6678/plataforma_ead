@@ -7,7 +7,8 @@
 			<div class="dropdown-menu" id="back-black" aria-labelledby="dropf">
 				<button id="dark-blue" class="btn btn-lg w-100 mb-1" type="button" data-toggle="modal" data-target="#editar_curso" style="border:none">Editar Curso</button>
 				<button id="dark-blue" class="btn btn-lg w-100 mb-1" type="button" data-toggle="modal" data-target="#adicionar_modulo" style="border:none">Modulo Novo</button>
-				<button id="dark-blue" class="btn btn-lg w-100" type="button" data-toggle="modal" data-target="#adicionar_aula" style="border:none">Adicionar Aula</button>
+				<button id="dark-blue" class="btn btn-lg w-100 mb-1" type="button" data-toggle="modal" data-target="#adicionar_aula" style="border:none">Adicionar Aula</button>
+				<button id="dark-blue" class="btn btn-lg w-100" type="button" data-toggle="modal" data-target="#excluir_curso" style="border:none">Excluir Curso</button>
 			</div>
 		</div>
 	</div>
@@ -87,8 +88,6 @@
 								<form id="form_aula">
 									<label>Nome Da Aula</label><br>
 									<input class="form-control" type="text" name="nome"><br><br>
-									<label>Descrição da aula</label><br>
-									<textarea class="form-control" name="descricao_aula"></textarea><br><br>
 									<label>Codigo do Vimeo</label><br>
 									<input class="form-control" type="text" name="url">
 									<input class="btn btn-lg w-100" id="dark-blue" type="submit" value="Salvar">
@@ -212,6 +211,22 @@
 									</select><br><br>
 									<input class="btn w-100" id="dark-blue" type="submit" value="Adicionar nova aula">
 								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" aria-hidden="true" id="excluir_curso">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header" id="dark-blue">
+								<h1 class="modal-title">Excluir Curso</h1>
+								<button class="close" data-dismiss="modal" type="button" aria-label="close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+							<div class="modal-body" id="back-black">
+								<h3>Após excluir um curso você perderá todos os dados dele</h3>
+								<button id="del_curso" class="btn btn-lg" style="background-color:#483D8B;">Excluir</button>
 							</div>
 						</div>
 					</div>

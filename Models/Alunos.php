@@ -32,10 +32,6 @@ class Alunos extends Model{
 		if($sql->rowCount()>0){
 			$row = $sql->fetch();
 			$_SESSION['aluno']=$row['id'];
-			$_SESSION['usuario_hash']=md5(time().rand(0,99));
-			$hash=$_SESSION['usuario_hash'];
-			$user=$_SESSION['aluno'];
-			$this->db->query("UPDATE alunos SET hash_usuario='$hash' WHERE id='$user'");
 			return true;
 		}else{
 			return false;

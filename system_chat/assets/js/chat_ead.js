@@ -138,14 +138,15 @@ var chat_ead={
                 html+="<span class='c_sender'>"+msgs[x].name_sender+"</span><br>"
                 html+="<span class='c_date'>"+msgs[x].date_sender+"</span>"
                 html+="</div>"
-                html+="<div class='c_body'>"
+                html+="<span class='c_body'>"
                 if(msgs[x].msg_type=='text'){
                     html+=msgs[x].msg
                 }else if(msgs[x].msg_type=='img'){
                     html+='<img src="'+BASE+'media/imagens/'+msgs[x].msg+'"/>'
                 }
+                html+="</span>"
                 html+="</div>"
-                html+="</div>"
+                html+="<hr>"
                 $('.messages').append(html)
             }
         }

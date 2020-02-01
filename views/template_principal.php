@@ -11,7 +11,7 @@
 </head> 
 <body>
 	<div class="container-fluid" id="dark-blue">
-		<nav class="navbar navbar-expand-md justify-content-center" id="dark-blue">
+		<nav class="navbar navbar-expand-lg justify-content-center" id="dark-blue">
 			<a class="navbar-brand logo" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topo_principal">
 				<span class="line"></span>
@@ -27,7 +27,7 @@
 			</div>
 			<form method="GET" class="form-inline" action="<?php echo BASE?>Busca">
 				<select name="categoria" class="btn">
-					<option class="dropdown-item"value="0">Todas categorias</option>
+					<option class="dropdown-item" value="0">Todas categorias</option>
 					<?php foreach($dados['categorias'] as $categoria):?>
 						<option class="w-75"<?php echo (!empty($dados['categoria_ativa']) && $dados['categoria_ativa']==$categoria['id']?'selected':'')?> value="<?php echo $categoria['id']?>"><?php echo $categoria['categoria']?></option>
 					<?php endforeach;?>

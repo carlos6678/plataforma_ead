@@ -201,4 +201,16 @@ $(function(){
             }
         })
     })
+    $('#del_curso').on('click',function(){
+        $.ajax({
+            url:BASE+'ajax/apagarCurso/'+ID_CURSO,
+
+            success:function(){
+                alert('Curso Apagado com sucesso')
+            },
+            complete:function(){
+                window.location.href=BASE
+            }
+        })
+    })
 })

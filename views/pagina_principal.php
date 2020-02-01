@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 </head>
 <body id="back-black">
-	<div class="container"> 
+	<div class="container-fluid"> 
 		<div class="row">
 			<div class="col-sm-12 d-flex justify-content-center">
 				<div class="jumbotron mt-5" id="dark-blue">
@@ -29,84 +29,88 @@
 				</div>
 			</div>
 		</div>
-		<h1>Destaques</h1>
-		<div class="row justify-content-between">
-			<?php foreach($categorias as $key=>$categoria):?>
-				<div class="col-sm-3">
-					<div class="slide carousel ml-3" data-ride="carousel" data-interval="5000" id="cursoSlide<?php echo $key?>" style="width:250px;">
-						
-						<div class="carousel-inner">
-							<?php foreach($carousel[$key] as $key1=>$curso):?>
-								<?php if($categoria['id']==$curso['id_categoria']):?>
-									<?php if($key1==0):?> 
-										<div class="carousel-item active">
-											<a  href="<?php echo BASE;?>principal_curso/entrar_view/<?php echo $curso['id']?>">
-												<div class="card" id="dark-blue">
-													<div class="card-header">
-														<h4 align="center"><?php echo $categoria['categoria']?></h4>
-													</div>
-													<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso['imagem']?>" style="height:200px;" class="w-100">
-													<div class="card-body">
-														<h5 class="card-title" align="center"><?php echo utf8_encode($curso['nome'])?></h3>
-													</div>
-												</div>
-											</a>
-										</div>
-									<?php else:?>
-										<div class="carousel-item">
-											<a  href="<?php echo BASE;?>principal_curso/entrar_view/<?php echo $curso['id']?>">
+		<?php if(!empty($carousel)):?>
+			<h1>Destaques</h1> 
+			<div class="row justify-content-start">
+				<?php foreach($categorias as $key=>$categoria):?>
+					<?php if(array_key_exists($key,$carousel)):?>
+						<div class="slide carousel mr-5" data-ride="carousel" data-interval="5000" id="cursoSlide<?php echo $key?>" style="width:250px;">
+							
+							<div class="carousel-inner">
+								
+								<?php foreach($carousel[$key] as $key1=>$curso):?> 
+									<?php if($categoria['id']==$curso['id_categoria']):?>
+										<?php if($key1==0):?> 
+											<div class="carousel-item active">
+												<a  href="<?php echo BASE;?>principal_curso/entrar_view/<?php echo $curso['id']?>">
 													<div class="card" id="dark-blue">
 														<div class="card-header">
 															<h4 align="center"><?php echo $categoria['categoria']?></h4>
 														</div>
-														<img  class="card-img-top" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso['imagem']?>" style="height:200px;" class="w-100 img-fluid img-fluid">
+														<img  class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso['imagem']?>" style="height:200px;" class="w-100">
 														<div class="card-body">
-															<h5 class="card-title" align="center"><?php echo utf8_encode($curso['nome'])?></h5>
+															<h5 class="card-title" align="center"><?php echo utf8_encode($curso['nome'])?></h3>
 														</div>
 													</div>
 												</a>
+											</div>
+										<?php else:?>
+											<div class="carousel-item">
+												<a  href="<?php echo BASE;?>principal_curso/entrar_view/<?php echo $curso['id']?>">
+														<div class="card" id="dark-blue">
+															<div class="card-header">
+																<h4 align="center"><?php echo $categoria['categoria']?></h4>
+															</div>
+															<img  class="card-img-top" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso['imagem']?>" style="height:200px;" class="w-100 img-fluid img-fluid">
+															<div class="card-body">
+																<h5 class="card-title" align="center"><?php echo utf8_encode($curso['nome'])?></h5>
+															</div>
+														</div>
+													</a>
+											</div>
+										<?php endif;?>
+									<?php endif;?>
+								<?php endforeach;?>
+							</div>
+							<a href="#cursoSlide<?php echo $key?>" class="carousel-control-prev" data-slide="prev">
+								<span class="carousel-control-prev-icon"></span>
+							</a>
+							<a href="#cursoSlide<?php echo $key?>" class="carousel-control-next" data-slide="next">
+								<span class="carousel-control-next-icon"></span>
+							</a>
+							
+						</div>
+					<?php endif;?>
+				<?php endforeach;?>
+			</div>
+		<?php endif;?>
+		<?php if(!empty($cursos)):?>
+			<div class="row">
+				<?php foreach($categorias as $categoria):?>
+					<h1><?php echo $categoria['categoria']?></h1>
+					<div style="overflow-y:auto;height:270px;" class="w-100 d-flex">
+						<?php foreach($cursos as $curso):?>
+							<?php if($categoria['id']==$curso['id_categoria']):?>
+								<a href="<?php echo BASE?>principal_curso/entrar_view/<?php echo $curso['id']?>" class="card ml-2 mb-3" style="width:200px;height:250px;background-color:#483D8B;">
+									<?php if($categoria['id']==$curso['id_categoria']):?>
+										<div class="card-header">
+											<h5 align="center"><?php echo $categoria['categoria']?></h5>
 										</div>
 									<?php endif;?>
-								<?php endif;?>
-							<?php endforeach;?>
-						</div>
-						<a href="#cursoSlide<?php echo $key?>" class="carousel-control-prev" data-slide="prev">
-							<span class="carousel-control-prev-icon"></span>
-						</a>
-						<a href="#cursoSlide<?php echo $key?>" class="carousel-control-next" data-slide="next">
-							<span class="carousel-control-next-icon"></span>
-						</a>
-						
-					</div>
-				</div>
-			<?php endforeach;?>
-		</div>
-		<div class="row">
-			<?php foreach($categorias as $categoria):?>
-				<h1><?php echo $categoria['categoria']?></h1>
-				<div style="overflow-y:auto;height:270px;" class="w-100 d-flex">
-					<?php foreach($cursos as $curso):?>
-						<?php if($categoria['id']==$curso['id_categoria']):?>
-							<a href="<?php echo BASE?>principal_curso/entrar_view/<?php echo $curso['id']?>" class="card ml-2 mb-3" style="width:200px;height:250px;background-color:#483D8B;">
-								<?php if($categoria['id']==$curso['id_categoria']):?>
-									<div class="card-header">
-										<h5 align="center"><?php echo $categoria['categoria']?></h5>
-									</div>
-								<?php endif;?>
 
-								<?php if($categoria['id']==$curso['id_categoria']):?>
-									<img class="card-img-top img-fluid" style="height:125px;" src="<?php echo BASE?>assets/imagens/cursos/<?php echo $curso['imagem']?>">
-								<?php endif;?>
-								<div class="card-body">
-									<h5 align="center"><?php echo $curso['nome']?></h5>
-								</div>
-							</a>
-						<?php endif;?>
-					<?php endforeach;?>
-				</div>
-				
+									<?php if($categoria['id']==$curso['id_categoria']):?>
+										<img class="card-img-top img-fluid" style="height:125px;" src="<?php echo BASE?>assets/imagens/cursos/<?php echo $curso['imagem']?>">
+									<?php endif;?>
+									<div class="card-body">
+										<h5 align="center"><?php echo utf8_encode($curso['nome'])?></h5>
+									</div>
+								</a>
+							<?php endif;?>
+						<?php endforeach;?>
+					</div>
 				<?php endforeach;?>
-		</div>
+			</div>
+		<?php endif;?>
 	</div>
 </body>
 </html>

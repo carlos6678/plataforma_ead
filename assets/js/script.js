@@ -52,6 +52,7 @@ $(function(){
 	var classificacao=document.querySelectorAll('.classificacao')
 	var value_class=0
 	var status=0
+	
 	classificacao.forEach(function(item,ind){
 		item.setAttribute('id-class',ind)
 		item.setAttribute('set',"false")
@@ -99,7 +100,7 @@ $(function(){
 	$('#envie_class').on('click',function(){
 		value_class=parseInt(value_class)
 		if(value_class+1>5){
-			alert('Erro no pode enviar um valor de classificação maior que 5')
+			alert('Erro no pode enviar um valor de classificação maior que 5 ou igual a zero')
 		}else{
 			$.ajax({
 				url:BASE+'ajax/classificar_curso',

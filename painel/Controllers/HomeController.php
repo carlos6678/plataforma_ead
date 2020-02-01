@@ -15,7 +15,9 @@ class HomeController extends Controller{
 	public function index(){
 		$dados=array( 
 			'cursos'=>array(),
-			'info'=>array()
+			'info'=>array(),
+			'cursos_graf'=>array(),
+			'cursos_qt'=>array()
 		);
 		$cursos=new Cursos();
 		if($_SESSION['admin']==ROOT){

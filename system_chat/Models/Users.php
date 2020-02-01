@@ -5,20 +5,8 @@ use \Models\Grupos;
 class Users extends Model{
     private $info_usuario;
     public function verificar_usuario(){
-        if(!empty($_SESSION['usuario_hash'])){
-            $h=$_SESSION['usuario_hash'];
-            $sql="SELECT*FROM alunos WHERE hash_usuario=:h";
-            $sql=$this->db->prepare($sql);
-            $sql->bindValue(':h',$h);
-            $sql->execute();
-            
-            if($sql->rowCount()>0){
-              $data=$sql->fetch();
-              $this->id_usuario=$data['id'];
-              return true;
-            }else{
-              return false;
-            }
+        if(!empty($_SESSION['aluno'])){
+            return true;
         }
         else{
             return false;

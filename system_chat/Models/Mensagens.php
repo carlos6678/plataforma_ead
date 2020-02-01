@@ -23,4 +23,21 @@ class Mensagens extends Model{
         }
         return $array;
     }
+    public function clear(){
+        $dados=array();
+        $sql="SELECT mensagem FROM mensagens WHERE id_usuario=:id";
+        $sql=$this->db->prepare($sql);
+        $sql->bindValue(':id',$_SESSION['aluno']);
+        $sql->execute();
+
+        if($sql->rowCount()>0){
+            $dados=$sql->fetchAll(\PDO::FETCH_ASSOC);
+        }
+        $sql="DELETE FROM mensagens WHERE id_usuario=:id";
+        $sql=$this->db->prepare($sql);
+        $sql->bindValue(':id',$_SESSION['aluno']);
+        $sql->execute();
+
+        return $dados;
+    }
 }

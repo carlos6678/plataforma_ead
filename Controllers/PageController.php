@@ -9,12 +9,13 @@ class PageController extends Controller{
 			'categorias'=>array(), 
 			'carousel'=>array()
 
-		);
+		); 
 		$cursos=new Cursos();
 		$dados['cursos']=$cursos->getCursos();
+		$cursos_destaque=$cursos->getCursosDestaque();
 		$dados['categorias']=$cursos->getCategorias();
 		foreach($dados['categorias'] as $key=>$value){
-			foreach($dados['cursos'] as $value1){
+			foreach($cursos_destaque as $value1){
 				if($value1['id_categoria']==$value['id']){
 					$dados['carousel'][$key][]=$value1;
 				}

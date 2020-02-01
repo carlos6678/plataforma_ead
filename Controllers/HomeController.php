@@ -14,11 +14,11 @@ class HomeController extends Controller{
 	}
 	public function index(){ 
 		$dados=array(
-			'cursos'=>array(),
 			'categorias'=>array(),
 			'carousel'=>array(),
 			'curso_paginaçao'=>array(),
-			'total_regs'=>0
+			'total_regs'=>0,
+			'tem_desq'=>true
 		);
 
 		$alunos=new Alunos();
@@ -36,17 +36,21 @@ class HomeController extends Controller{
 		$dados['total_regs']=$cursos->contarRegistrosCursos()/$total_reg;
 		$dados['curso_paginaçao']=$cursos->paginaçao($inicio,$total_reg);
 		//termina paginaçao
-		$dados['cursos']=$cursos->getCursos();
+		$cursos_destaque=$cursos->getCursosDestaque();
 		$dados['cursos_cadastrados']=$cursos->getCursosDoAluno($_SESSION['aluno']);
 		$dados['categorias']=$cursos->getCategorias();
 		foreach($dados['categorias'] as $key=>$value){
-			foreach($dados['cursos'] as $value1){
+			foreach($cursos_destaque as $value1){
 				if($value1['id_categoria']==$value['id']){
 					$dados['carousel'][$key][]=$value1;
 				}
 			}
 		}
-
+		if(!empty($cursos_destaque)){
+			$dados['tem_desq']=true;
+		}else{
+			$dados['tem_desq']=false;
+		}
 		$this->loadTemplate('home',$dados);
 	}
 	public function cursos_entrar_view($id_curso){

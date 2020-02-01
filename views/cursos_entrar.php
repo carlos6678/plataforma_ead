@@ -7,22 +7,14 @@
 <body id="back-black"> 
 	<div class="container-fluid mt-3"> 
 		<div class="row justify-content-center">
-			<div class="col-sm-9" id="back-black">
+			<div class="col-sm-12" id="back-black">
 				<h1 class="w-100" style="font-size:60px;word-wrap:break-word;"><?php echo utf8_encode($curso->getNome())?></h1>
 				<hr style="background-color:white;">
 				<p style="font-size:35px;word-wrap:break-word"><?php echo $curso->getDescricao()?></p>
 			</div>
-			<div class="col-sm-3" id="back-black">
-				<img class="w-100" style="height:200px;" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
-			</div>
 			 
-			<div class="col-sm-9 mt-3 plyr__video-embed" style="clear:both;">
-				<Iframe 
-				id="player" src = "https://player.vimeo.com/video/379049079?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
-					allowFullScreen 
-					allowtransparency 
-					allow="autoplay" 
-				> </iframe>
+			<div class="col-sm-9 mt-5">
+				<img class="w-100" height="600" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
 			</div>
 			<div class="col-sm-9 mt-5 mb-5">
 				<div id="accordion">

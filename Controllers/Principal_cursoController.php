@@ -12,12 +12,14 @@ class Principal_cursoController extends Controller{
 			'qtCursosAlunos'=>array(),
 			'qtAlunos'=>array(),
 			'comentarios_curso'=>array(),
-			'cursos_relacionados'=>array()
+			'cursos_relacionados'=>array(),
+			'categorias'=>array()
 		); 
 
 		$curso=new Cursos();
 		$curso->setCurso($id_curso);
-		$dados['curso']=$curso;
+		$dados['categorias']=$curso->getCategorias();
+		$dados['curso']=$curso; 
 		$id_professor=$curso->getIdProfessor($id_curso);
 		$modulos=new Modulos();
 		$dados['modulos']=$modulos->getModulosView($id_curso);

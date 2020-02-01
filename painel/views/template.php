@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="<?php echo BASE?>assets/css/bootstrap.min.css"></link>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE?>assets/js/bootstrap.bundle.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
 </head>
@@ -23,7 +24,7 @@
 					<li class="nav-item">
 						<?php if(!isset($_SESSION['aluno'])):?>
 							<a class="nav-link" href="<?php echo BASE_PRINCIPAL?>">
-								Pagina inicial
+								Visão do Aluno
 							</a>
 						<?php endif;?>
 					</li>
@@ -46,8 +47,8 @@
 						</div>
 					</li>
 				</ul>
-				<form method="post" class="form-inline">
-					<input type="text" class="form-control">
+				<form method="GET" class="form-inline" action="<?php echo BASE?>busca">
+					<input name="busca" type="text" class="form-control" placeholder="Procurar seu curso">
 					<input type="submit" class="form-control" value="Pesquisar">
 				</form>
 			</div>

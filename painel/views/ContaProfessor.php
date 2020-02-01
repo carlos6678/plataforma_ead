@@ -23,7 +23,7 @@
 						<label>Nova senha:</label><br>
 						<input class="form-control" type="password" name="senha"><br><br>
 						<label>Adicione uma biografia</label><br>
-						<textarea name="descricao" cols="50" rows="5" placeholder="Opcional"?>"></textarea>
+						<textarea name="descricao" cols="50" rows="5" placeholder="Opcional"?></textarea>
 						<input class="form-control" type="submit" value="Salvar alterações" id="verificar_senha">
 					</form>
 					<button class="btn" id="uploadFoto">Trocar foto</button>

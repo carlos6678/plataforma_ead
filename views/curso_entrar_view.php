@@ -7,23 +7,15 @@
 <body id="back-black"> 
 	<div class="container-fluid mt-3"> 
 		<div class="row justify-content-center">
-			<div class="col-sm-9" id="back-black">
+			<div class="col-sm-12" id="back-black">
 				<h1 class="w-100" style="font-size:60px;word-wrap:break-word;"><?php echo utf8_encode($curso->getNome())?></h1>
 				<hr style="background-color:white;">
 				<p style="font-size:35px;word-wrap:break-word;"><?php echo utf8_encode($curso->getDescricao())?></p>
 			</div>
-			<div class="col-sm-3" id="back-black">
-				<img class="w-100" style="height:200px;" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
-			</div>
 
 
-			<div class="col-sm-9 mt-5 plyr__video-embed" style="clear:both;">
-				<Iframe 
-				id="player" src = "https://player.vimeo.com/video/379049079?loop=false&amp;byline=false&amp;portrait=false&amp;title=false&amp;speed=true&amp;transparent=0&amp;gesture=media"
-					allowFullScreen 
-					allowtransparency 
-					allow="autoplay" 
-				> </iframe>
+			<div class="col-sm-9 mt-5">
+				<img class="w-100" height="600" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $curso->getImagem()?>" border="0" >
 			</div>
 			<div class="col-sm-9 mt-5 mb-5">
 				<div id="accordion">
@@ -57,13 +49,19 @@
 			</div>
 	
 			<div class="col-sm-9">
-				<div class="add_curso mb-3">
-					<h1>Adicione para ver as aulas</h1>
-						<?php if(isset($_SESSION['aluno']) && !empty($_SESSION['aluno'])):?>
-							<button data-id-aluno="<?php echo $_SESSION['aluno']?>" data-id-curso="<?php echo $curso->getIdCurso()?>" class="btn btn-lg adicionar_curso" style="color:white;background-color:black;height:80px;font-size:25px;">Clique aqui</button>
-						<?php endif;?>
-				</div>
+				
+				<?php if(isset($_SESSION['aluno']) && !empty($_SESSION['aluno'])):?>
+					<div class="add_curso mb-3">
+						<h1>Adicione para ver as aulas</h1>
+						<button data-id-aluno="<?php echo $_SESSION['aluno']?>" data-id-curso="<?php echo $curso->getIdCurso()?>" class="btn btn-lg adicionar_curso" style="color:white;background-color:black;height:80px;font-size:25px;">Clique aqui</button>
+					</div>
+				<?php endif;?>
 
+				<?php if($curso->getClassificacao()!=0):?>
+					<h1 class="mb-3">Classificação:<?php echo $curso->getClassificacao()?></h1>
+				<?php else:?>
+					<h1 class="mb-3">Ainda não foi classificado</h1>
+				<?php endif;?>
 				<div class="jubotron w-100" style="border:3px solid black;color:white;background-color:#1C1C1C;">
 					<h1 class="display-4">Descrição do Professor</h1>
 					<?php foreach($professor as $prof):?>

@@ -115,5 +115,10 @@ class AjaxController extends Controller{
 			$aulas= new Aulas();
 			$aulas->adicionarAula($id_curso,$ModuloAula,$tipo,$aula);
 		}
-    }
+	}
+	public function apagarCurso($id_curso){
+		$curso=new Cursos();
+		$curso->apagarOcurso($id_curso);
+	}
+
 }

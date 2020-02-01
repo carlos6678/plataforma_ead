@@ -10,25 +10,36 @@ class Cursos extends Model{
 
 		if($sql->rowCount()>0){
 			$curso=$sql->fetchAll();
-
-
 		}
 		return $curso;
-	}
+	} 
 	public function getCursos(){
 		$array=array();
 
-		$sql="SELECT* FROM cursos";
-		$sql=$this->db->query($sql);
+		$sql="SELECT* FROM cursos ORDER BY classificacao DESC";
+		$sql=$this->db->prepare($sql);
+		$sql->execute();
 
 		if($sql->rowCount()>0){
 			$array=$sql->fetchAll();
 		}
 		return $array;
 	}
+	public function getCursosDestaque(){ 
+		$array=array();
+
+		$sql="SELECT* FROM cursos WHERE classificacao=:s";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(':s',5);
+		$sql->execute();
+		if($sql->rowCount()>0){
+			$array=$sql->fetchAll();
+		}
+		return $array; 
+	}
 	public function paginaçao($inicio,$total_reg){
 		$array=array();
-		$sql="SELECT*FROM cursos LIMIT $inicio,$total_reg";
+		$sql="SELECT*FROM cursos ORDER BY classificacao DESC LIMIT $inicio,$total_reg";
 		$sql=$this->db->query($sql);
 		if($sql->rowCount()>0){
 			$array=$sql->fetchAll();
@@ -82,6 +93,9 @@ class Cursos extends Model{
 	}
 	public function getIdCurso(){
 		return $this->info['id'];
+	}
+	public function getClassificacao(){
+		return $this->info['classificacao'];
 	}
 	public function getTotalAulasCurso(){
 		$sql="SELECT id FROM aulas WHERE id_curso='".($this->getIdCurso())."'";

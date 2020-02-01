@@ -2,6 +2,7 @@
 namespace Controllers;
 use \Core\Controller;
 use \Models\Users;
+use \Models\Mensagens;
 class HomeController extends Controller{
     public function __construct(){
         $dados=array();
@@ -19,5 +20,19 @@ class HomeController extends Controller{
         $dados['info_usuario']=$usuario;
         $dados['grupos_atuais']=$usuario->getGruposAtuais();
         $this->loadTemplate('home',$dados);
+    }
+    public function sair(){
+        $msg=new Mensagens();
+        $paths=$msg->clear();
+
+        $diretorio=$_SERVER['DOCUMENT_ROOT'].'/ead/system_chat/media/imagens/';
+        
+        foreach($paths as $path){
+            if(file_exists($diretorio.$path['mensagem']) && is_file($path['mensagem'])){
+                unlink($diretorio.$path);
+            }
+        }
+
+        header('Location:'.BASE_PRINCIPAL);
     }
 }  

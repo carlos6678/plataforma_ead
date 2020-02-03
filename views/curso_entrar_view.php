@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>PEIXOTAO_EAD</title>
+	<title>GV_EAD</title>
 	<meta charset="utf-8">
 </head>
 <body id="back-black"> 
@@ -98,7 +98,7 @@
 										}
 									?><?php echo $cursos['id']?>">
 										<div class="card" id="dark-blue">
-											<img   id="relacionado-img" class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>">
+											<img  style="height:600px;" id="relacionado-img" class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>">
 											<div class="card-body">
 												<h5 class="card-title" align="center"><?php echo utf8_encode($cursos['nome'])?></h3>
 											</div>
@@ -115,7 +115,7 @@
 											}
 										?><?php echo $cursos['id']?>">
 											<div class="card" id="dark-blue">
-												<img   id="relacionado-img" class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>">
+												<img   style="height:600px;" id="relacionado-img" class="card-img-top img-fluid" src="<?php echo BASE;?>assets/imagens/cursos/<?php echo $cursos['imagem']?>">
 												<div class="card-body">
 													<h5 class="card-title" align="center"><?php echo utf8_encode($cursos['nome'])?></h3>
 												</div>

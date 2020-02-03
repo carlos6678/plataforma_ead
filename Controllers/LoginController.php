@@ -20,7 +20,7 @@ class LoginController extends Controller{
 		$this->loadView('login',$dados);
 	}
 	public function cadastro(){
-		$dados=array();
+		$dados=array(); 
 		$aluno=new Alunos();
 		if(isset($_POST['email']) && !empty($_POST['email'])){
 			if(!$aluno->EmailExiste($_POST['email']) && filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){

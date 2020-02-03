@@ -5,13 +5,22 @@ use \Core\Controller;
 class PageController extends Controller{
 	public function index(){
 		$dados = array(
-			'cursos'=>array(),
 			'categorias'=>array(), 
-			'carousel'=>array()
+			'carousel'=>array(), 
+			'curso_paginaçao'=>array()
 
-		); 
+		);
 		$cursos=new Cursos();
-		$dados['cursos']=$cursos->getCursos();
+		//paginanaçao
+		$total_reg=8;
+		$pagina=0;
+		if(isset($_GET['pagina']) && !empty($_GET['pagina'])){
+			$pagina=$_GET['pagina'];
+		}
+		$inicio=$pagina*$total_reg; 
+		$dados['total_regs']=$cursos->contarRegistrosCursos()/$total_reg;
+		$dados['curso_paginaçao']=$cursos->paginaçao($inicio,$total_reg);
+		//fim  da paginaçao
 		$cursos_destaque=$cursos->getCursosDestaque();
 		$dados['categorias']=$cursos->getCategorias();
 		foreach($dados['categorias'] as $key=>$value){

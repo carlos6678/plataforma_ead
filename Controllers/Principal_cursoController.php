@@ -28,6 +28,7 @@ class Principal_cursoController extends Controller{
 		$dados['cursos_relacionados']=$curso->getCursosDoProfessor($id_professor);
 		$dados['cursos_professor']=$curso->getProfessorIdCursos($id_professor);
 
+
 		foreach ($dados['cursos_professor'] as $keyCurso =>$num_curso) {
 			$dados['qtCursosAlunos'][$keyCurso]=$curso->getQuantidadeDeAlunosProfessor($num_curso['id']);
 

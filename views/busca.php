@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>GV_EAD</title>
 </head>
 <body id="back-black">
 	<div class="container-fluid mt-3">

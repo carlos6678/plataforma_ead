@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Login</title>
+	<title>GV_EAD</title>
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/template.css">
 	<link rel="stylesheet" href="<?php echo BASE?>assets/css/bootstrap.min.css">
 	<meta charset="utf-8">

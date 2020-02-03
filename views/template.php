@@ -9,6 +9,7 @@
 	<script type="text/javascript" src="<?php echo BASE?>assets/js/bootstrap.bundle.min.js"></script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<title>GV_EAD</title>
 </head> 
 <body> 
 	<div class="container-fluid" id="dark-blue">

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>GV_EAD</title>
 </head>
 <body id="back-black">
 	<div class="container-fluid mt-3">
@@ -86,7 +86,7 @@
 					<?php endfor;?>
 				</ul>
 			</nav>
-		</div>
+		</div> 
 		<div class="row justify-content-center cursos">
 			<?php foreach($curso_paginaçao as $cr):?>
 				<a href="<?php echo BASE?>cursos/entrar/<?php echo $cr['id']?>" class="card ml-3 mb-3" id="dark-blue">

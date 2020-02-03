@@ -84,30 +84,24 @@
 				<?php endforeach;?>
 			</div>
 		<?php endif;?>
-		<?php if(!empty($cursos)):?>
-			<div class="row">
-				<?php foreach($categorias as $categoria):?>
-					<h1><?php echo $categoria['categoria']?></h1>
-					<div style="overflow-y:auto;height:270px;" class="w-100 d-flex">
-						<?php foreach($cursos as $curso):?>
-							<?php if($categoria['id']==$curso['id_categoria']):?>
-								<a href="<?php echo BASE?>principal_curso/entrar_view/<?php echo $curso['id']?>" class="card ml-2 mb-3" style="width:200px;height:250px;background-color:#483D8B;">
-									<?php if($categoria['id']==$curso['id_categoria']):?>
-										<div class="card-header">
-											<h5 align="center"><?php echo $categoria['categoria']?></h5>
-										</div>
-									<?php endif;?>
-
-									<?php if($categoria['id']==$curso['id_categoria']):?>
-										<img class="card-img-top img-fluid" style="height:125px;" src="<?php echo BASE?>assets/imagens/cursos/<?php echo $curso['imagem']?>">
-									<?php endif;?>
-									<div class="card-body">
-										<h5 align="center"><?php echo utf8_encode($curso['nome'])?></h5>
-									</div>
-								</a>
-							<?php endif;?>
-						<?php endforeach;?>
-					</div>
+		<?php if(!empty($curso_paginaçao)):?>
+			<div class="row justify-content-center cursos">
+				<nav>
+					<ul class="pagination">
+						<?php for($page=0;$page<=$total_regs;$page++):?>
+							<li class="page-item"><a style="color:white;" id="dark-blue" class="page-link" href="?pagina=<?php echo $page?>"><?php echo $page+1?></a></li>
+						<?php endfor;?>
+					</ul>
+				</nav>
+			</div> 
+			<div class="row cursos">
+				<?php foreach($curso_paginaçao as $cr):?>
+					<a href="<?php echo BASE?>principal_curso/entrar_view/<?php echo $cr['id']?>" class="card ml-3 mb-3" id="dark-blue">
+						<img src="<?php echo BASE?>assets/imagens/cursos/<?php echo $cr['imagem']?>" class="card-img-top img-fluid" style="width:300px;height:300px;">
+						<div class="card-body">
+							<h5 align="center"><?php echo utf8_encode($cr['nome'])?></h5>
+						</div>
+					</a>
 				<?php endforeach;?>
 			</div>
 		<?php endif;?>

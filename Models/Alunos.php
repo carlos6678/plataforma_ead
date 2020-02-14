@@ -103,4 +103,44 @@ class Alunos extends Model{
 			return false;
 		}
 	}
+	public function contarRegistrosAlunos(){
+		$sql="SELECT COUNT(*) as total FROM alunos";
+		$sql=$this->db->prepare($sql);
+		$sql->execute();
+		if($sql->rowCount()>0){
+			$array=$sql->fetch();
+			return $array['total'];
+		}
+	}
+	public function paginaçao($inicio,$total_reg){
+		$array=array();
+		$sql="SELECT*FROM alunos ORDER BY nome LIMIT $inicio,$total_reg";
+		$sql=$this->db->query($sql);
+		if($sql->rowCount()>0){
+			$array=$sql->fetchAll();
+			return $array;
+		}
+		return $array; 
+	}
+	public function getNotificacoes(){
+		$array=array();
+		$sql="SELECT*,(select nome from alunos where alunos.id=notificacoes.id_remetente) as remetente,
+		(select foto_perfil from alunos where alunos.id=notificacoes.id_remetente) as foto
+		FROM notificacoes WHERE id_usuario=:id_usuario AND lido=0";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(':id_usuario',$_SESSION['aluno']);
+		$sql->execute();
+
+		if($sql->rowCount()>0){
+			$array=$sql->fetchAll(\PDO::FETCH_ASSOC);
+		}
+
+		return $array;
+	}
+	public function setMensagemLida($id_lida){
+		$sql="UPDATE notificacoes SET lido=1 WHERE id=:id";
+		$sql=$this->db->prepare($sql);
+		$sql->bindValue(':id',$id_lida);
+		$sql->execute();
+	}
 }

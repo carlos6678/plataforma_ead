@@ -10,6 +10,7 @@
 	<div class="container"> 
 		<div class="login" id="dark-blue"> 
 			<img id="img" src="<?php echo BASE_PRINCIPAL?>assets/imagens/login.jpg">
+			<h3 style="position:absolute;">Seja um Professor</h3>
 			<form method='POST' class="form-group pt-5">
 				<input type="email" name="email" placeholder="E-mail" required="required" class="form-control form-control-lg"><br><br>
 				<input type="password" name="senha" placeholder="******" required="required" class="form-control form-control-lg"><br><br>

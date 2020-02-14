@@ -250,7 +250,7 @@ class Cursos extends Model{
 
 		if($sql->rowCount()>0){
 			$sql=$sql->fetch();
-			$qt=$sql['qt'];
+			$qt=$sql['qt']; 
 			$total=$sql['total'];
 			$this->InserirClassificacaoCurso(intval($qt),intval($total),$id_curso);
 		}

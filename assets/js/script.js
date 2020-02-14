@@ -49,6 +49,71 @@ $(function(){
 		})
 	})
 
+	function notificaçoes(){
+		$.ajax({
+			url:BASE+'ajax/notificacoes',
+			dataType:'json',
+
+			success:function(json){
+				if(json.length>0){
+					var html=""
+					var cont=0
+					json.forEach((item,ind)=>{
+						if(item.tipo=='auth'){
+							var foto=item.foto.length>0?BASE+'assets/imagens/usuarios/'+item.foto:BASE+'assets/imagens/usuario.png'
+							if(item.lido==0){
+								html+=`<button style="color:white" not="${item.id}" type="button" class="dropdown-item lido" data-toggle="modal" data-target="#Notification${ind}">Bate-Papo(nao lida)</button>`
+								cont++
+								document.getElementById('icon-not').innerHTML=cont
+							}else{
+								html+=`<button style="color:white" id="lido" not="${item.id}" type="button" class="dropdown-item" data-toggle="modal" data-target="#Notification${ind}">Pedido de autenticação</button>`
+							}
+							var modal=`<div class="modal fade" id="Notification${ind}" tabindex="-1" role="dialog" aria-labelledby="Notification${ind}" aria-hidden="true">`
+							modal+=`<div class="modal-dialog" role="document">`
+							modal+=`<div class="modal-content">`
+							modal+=` <div class="modal-header" id="back-black">`
+							modal+=`<h5 class="modal-title">Solicitação de chat</h5>`
+							modal+=`<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>`
+							modal+=`</div>`
+							modal+=`<div class="modal-body" id="back-black">
+							<div class="media"><img src="${foto}" class="ml-3" style="width:70px;height: 70px;border-radius: 35px;">
+							<div class="media-body">
+							<h3>Pedido de ${item.remetente}</h3>
+							<p>Usuario esta solicitando entrar em chat com você</p>
+							</div>
+							</div>
+							</div>`
+							modal+=` <div class="modal-footer" id="dark-blue"><button type="button" class="btn btn-dark" data-dismiss="modal">Aceitar</button><button type="button" class="btn btn-dark">Recusar</button>
+						  </div>`
+							modal+=`</div>`
+							modal+=`</div>`
+							modal+=`</div>`
+							$('#modais').append(modal)
+							modal=""
+						 }
+						 //modificação pendente de tipos de notificações
+					})
+					document.getElementsByClassName('c_notifica')[0].innerHTML=html
+				}
+			},
+			complete:function(){
+				var lidos=document.querySelectorAll('.lido')
+				lidos.forEach(function(item){
+					$(item).on('click',function(){
+						$.ajax({
+							url:BASE+'ajax/msgLida/'+this.getAttribute('not'),
+							success:function(){
+								console.log('lida')
+							}
+						})
+					})
+				})
+				cont=0
+				setTimeout(()=>{notificaçoes()},2000)
+			}
+		})
+	}
+	notificaçoes()
 	var classificacao=document.querySelectorAll('.classificacao')
 	var value_class=0
 	var status=0

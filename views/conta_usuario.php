@@ -15,7 +15,7 @@
 					<img class="mr-3" src="<?php echo BASE?>assets/imagens/usuario.png" style="width: 300px;height: 300px;">
 				<?php endif;?>
 				<div class="media-body">
-					<form method="POST" class="form-group">
+					<form method="POST" class="form-group" id="teste">
 						<label>Nome:</label><br>
 						<input class="form-control" type="text" name="nome" value="<?php echo $info->getNome()?>"><br><br>
 						<label>E-mail:</label><br>

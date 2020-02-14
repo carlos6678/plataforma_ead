@@ -8,7 +8,7 @@
 		<div class="row">
 			<div class="col-sm-12 d-flex justify-content-center">
 				<div class="jumbotron mt-5" id="dark-blue">
-					<h1 class="display-4">PEIXOTAO_EAD</h1>
+					<h1 class="display-4">GV_EAD</h1>
 					<p class="lead">Essa plataforma foi criada para facilitar o trabalho dos professores, Mas tambem foi pensada no aluno, que por sua vez pode tirar suas duvidas com o professor atraves dessa plataforma
 					</p>
 					<hr style="background-color:white;"> 

@@ -154,4 +154,26 @@ class HomeController extends Controller{
 		}
 		$this->loadTemplate('conta_usuario',$dados);
 	}
+	public function ListarUsuarios(){
+		$dados=array(
+			'info'=>array(),
+			'categorias'=>array()
+		);
+		$aluno = new Alunos();
+		$aluno->setAluno($_SESSION['aluno']);
+		$dados['info']=$aluno;
+		$cursos=new Cursos();
+		$dados['categorias']=$cursos->getCategorias();
+
+		$total_reg=10;
+		$pagina=0;
+		if(isset($_GET['pagina']) && !empty($_GET['pagina'])){
+			$pagina=$_GET['pagina'];
+		}
+		$inicio=$pagina*$total_reg; 
+		$dados['total_regs']=$aluno->contarRegistrosAlunos()/$total_reg;
+		$dados['alunos_paginaçao']=$aluno->paginaçao($inicio,$total_reg);
+
+		$this->loadTemplate('listaUsuarios',$dados);
+	}
 }

@@ -1,7 +1,7 @@
 $(function(){
-	$(function () {
-		$('[data-toggle="tooltip"]').tooltip()
-	  })
+	
+	$('[data-toggle="tooltip"]').tooltip()
+	
 	$('#uploadFoto').click(function(){
 		$('#escolher').trigger('click')
 	})

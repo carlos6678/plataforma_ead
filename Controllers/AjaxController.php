@@ -16,4 +16,27 @@ class AjaxController{
         $curso=new Cursos();
         $curso->InserirClassificacao($id_curso,$classificacao,$_SESSION['aluno'])->mediaClass($id_curso);
     }
+    public function notificacoes(){
+        $aluno=new Alunos;
+        $notificacoes=array();
+        set_time_limit(60);
+        
+        while(true){ 
+            session_write_close();
+            $notificacoes=$aluno->getNotificacoes();
+            if(!empty($notificacoes)){
+                break;
+            }else{
+                sleep(2);
+                continue;
+            }
+        }
+
+        header('Content-Type:application/json');
+        echo json_encode($notificacoes);
+    }
+    public function msgLida($id_not){
+        $aluno=new Alunos;
+        $aluno->setMensagemLida($id_not);
+    }
 }

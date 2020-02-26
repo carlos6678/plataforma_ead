@@ -82,21 +82,6 @@ class Aulas extends Model{
 		}
 		return $array;
 	}
-	public function setDuvidas($duvida,$id_aluno,$id_aula){
-		$sql="INSERT INTO duvidas SET data_duvida=NOW(),duvida='$duvida',id_aluno='$id_aluno',id_aula='$id_aula' ";
-		$this->db->query($sql);
-	}
-	public function getDuvidas($id_aula){
-		$array=array();
-		$sql="SELECT*,(select foto_perfil from alunos where alunos.id=duvidas.id_aluno) as fotos,(select nome from alunos where alunos.id=duvidas.id_aluno) as nome FROM duvidas WHERE id_aula=:id_aula ORDER BY data_duvida DESC";
-		$sql=$this->db->prepare($sql);
-		$sql->bindValue(':id_aula',$id_aula);
-		$sql->execute();
-		if($sql->rowCount()>0){
-			$array=$sql->fetchAll();
-		}
-		return $array;
-	}
 	private function isAssistido($id_aula,$id_aluno){
 		$sql="SELECT id FROM historico WHERE id_aluno=:id_aluno AND id_aula=:id_aula";
 		$sql=$this->db->prepare($sql);

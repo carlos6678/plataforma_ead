@@ -92,8 +92,8 @@ class Aulas extends Model{
 		}
 
 	}
-	public function updateVideo($id_aula,$nome,$descricao,$url){
-		$this->db->query("UPDATE videos SET nome='$nome',descricao='$descricao',url='$url' WHERE id_aula='$id_aula'");
+	public function updateVideo($id_aula,$nome,$url){
+		$this->db->query("UPDATE videos SET nome='$nome',url='$url' WHERE id_aula='$id_aula'");
 	}
 	public function updateQuestionario($id_aula,$pergunta,$opcao1,$opcao2,$opcao3,$opcao4,$resposta){
 		$this->db->query("UPDATE questionarios SET pergunta='$pergunta',opcao1='$opcao1',opcao2='$opcao2',opcao3='$opcao3',opcao4='$opcao4',resposta='$resposta' WHERE id_aula='$id_aula' ");

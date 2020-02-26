@@ -38,11 +38,10 @@ class AjaxController extends Controller{
     }
     public function ModificarAulaVideo($id_aula){
         if(!empty($_POST['nome']) && isset($_POST['nome'])){
-            $nome_aula=$_POST['nome'];
-            $descricao=$_POST['descricao_aula'];
+            $nome_aula=$_POST['nome']; 
             $url_video=$_POST['url'];
             $aula=new Aulas();
-            $aula->updateVideo($id_aula,$nome_aula,$descricao,$url_video);
+            $aula->updateVideo($id_aula,$nome_aula,$url_video);
 
         }
     }

@@ -21,8 +21,7 @@ $(function(){
                     $('#Video').modal('show')
                     var form_aula=$('#form_aula')[0]
                     $(form_aula[0]).attr('value',json.aula.nome)
-                    $(form_aula[1]).attr('value',json.aula.descricao)
-                    $(form_aula[2]).attr('value',json.aula.url)
+                    $(form_aula[1]).attr('value',json.aula.url)
                 }else{
                     $('#Questionario').modal('show')
                     var form_aula=$('#form_quest')[0]

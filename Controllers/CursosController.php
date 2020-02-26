@@ -118,12 +118,6 @@ class CursosController extends Controller{
 			}elseif($dados['aula_info']['tipo']==='poll'){
 				$view='curso_aula_poll';
 			}
-			if(isset($_POST['duvida']) && !empty($_POST['duvida'])){
-				$duvida=addslashes($_POST['duvida']);
-
-				$aula->setDuvidas($duvida,$_SESSION['aluno'],$id_aula);
-				header('Location:'.BASE.'cursos/aula/'.$id_aula);
-			}
 			if(isset($_POST['opcao']) && !empty($_POST['opcao'])){
 				$opcao=$_POST['opcao'];
 				if($opcao==$dados['aula_info']['resposta']){
@@ -141,7 +135,6 @@ class CursosController extends Controller{
 			}
 			$curso->UpdateInserirComentarioNoCurso($_SESSION['aluno'],$alunos->getNome(),$alunos->getFoto());
 			$dados['comentarios_curso']=$curso->Comentarios($id_curso);
-			$dados['duvidas']=$aula->getDuvidas($id_aula);
 			$this->loadTemplate($view,$dados);
 		}else{
 			header('Location:'.BASE); 

@@ -5,7 +5,6 @@
 	<link rel="stylesheet" href="<?php echo BASE;?>assets/css/template.css">
 	<link rel="stylesheet" href="<?php echo BASE?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdn.plyr.io/3.5.6/plyr.css"/>
-	<script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript" src="<?php echo BASE?>assets/js/bootstrap.bundle.min.js"></script>
 	<meta charset="utf-8">
@@ -16,14 +15,6 @@
 	<div class="container-fluid" id="dark-blue">
 		<nav class="navbar navbar-expand-lg d-flex justify-content-center" id="dark-blue">
 			<a class="navbar-brand logo" href="<?php echo BASE;?>">PEIXOTAO_EAD</a>
-			<div class="dropdown">
-				<ion-icon name="notifications-outline" class="dropdown-toggle" style="font-size:40px" data-toggle="dropdown">
-				</ion-icon>
-				<div id="icon-not"></div>
-				<div class="dropdown-menu c_notifica" id="back-black">
-						
-				</div>
-			</div>
 			<button id="perfil_oculto" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topo_principal">
 				<span class="line"></span>
 				<span class="line"></span>
@@ -45,7 +36,6 @@
 					<img id="perfil" class="dropdown-toggle" data-toggle="dropdown" src="<?php echo BASE;?>assets/imagens/usuario.png" style="width: 60px;height: 60px;">
 				<?php endif;?>
 				<div class="dropdown-menu" id="back-black">
-					<a class="dropdown-item" href="<?php echo BASE?>home/ListarUsuarios">Procurar Amigos</a>
 					<a href="<?php echo BASE;?>home/conta_usuario/<?php echo $_SESSION['aluno']?>"class="dropdown-item">Conta</a>
 					<a href="<?php echo BASE;?>painel/home"class="dropdown-item">Instrutor</a>
 					<a href="http://localhost/ead/system_chat/"class="dropdown-item">Chat</a>
@@ -70,7 +60,6 @@
 	</script>
 	<?php $this->loadInTemplate($name,$dados)?>
 	<script type="text/javascript" src="<?php echo BASE;?>assets/js/script.js"></script>
-	<script type="text/javascript" src="<?php echo BASE?>assets/js/chat_unico.js"></script>
 	<footer>
 		<div class="rodape">
 			<div class="jumbotron">

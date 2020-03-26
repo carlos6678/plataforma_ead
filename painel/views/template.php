@@ -38,7 +38,7 @@
 					<li class="nav-item dropdown">
 						<?php if(!empty($dados['info']->getFotoProfessor())):?>
 							<a class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false"><img src="<?php echo BASE?>assets/imagens/professores/<?php echo $dados['info']->getFotoProfessor();?>" style="width: 40px;height: 40px;border-radius: 20px;"></a>
-						<?php else:?>
+						<?php else:?> 
 							<img class="dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-expanded="false" src="<?php echo BASE_PRINCIPAL?>assets/imagens/usuario.png" style="width: 40px;height: 40px">
 						<?php endif;?>
 						<div class="dropdown-menu" id="back-black" aria-labelledby="navbarDropdown">

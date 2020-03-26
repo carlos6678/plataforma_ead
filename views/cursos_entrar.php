@@ -136,6 +136,7 @@
 				<h1 class="mt-5">Você Já classificou esse curso</h1>
 			<?php endif;?>
 			
+			<h1 class="mt-5">O que acha do curso?</h1>
 			<div id="adicionar_comentario">
 				<form method="POST">
 					<label style="font-size: 50px;color:white;">Comente:</label><br>

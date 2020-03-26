@@ -5,8 +5,9 @@
 </head>
 <body id="back-black">
 <div class="direita">
-	<h3>Questionário</h3>
-	<h1><?php echo $aula_info['pergunta']?></h1>
+	<h1>Questionário</h1>
+
+	<h2 style="float:left">Pergunta:</h2><h2><?php echo $aula_info['pergunta']?></h2>
 	
 	<form method="POST">
 		<input type="radio" name="opcao" value="1" id="opcao1">
@@ -21,12 +22,15 @@
 		<input type="radio" name="opcao" value="4" id="opcao4">
 		<label class="num" for="opcao4"><?php echo $aula_info['opcao4']?></label><br><br>
 
-		<input type="submit" value="enviar">
+		<input type="submit" value="enviar" class="btn btn-lg" id="dark-blue" style="color:white">
 	</form>
 
 	<?php if(isset($resposta)):?>
 		<?php if($resposta):?>
-			<?php header("Location:".BASE."cursos/entrar/".$curso->getIdCurso())?>
+			<script>
+				alert('Você acertou!!!')
+				window.location.href=BASE+"cursos/entrar/"+<?php echo $curso->getIdCurso()?>
+			</script>
 		<?php else:?>
 			<script>
 				alert("Vixe tu errou feio tente de novo")

@@ -12,7 +12,7 @@
 				<?php if(!empty($info->getFotoProfessor())):?>
 					<img id="img_user" class="mr-3 img-fluid" src="<?php echo BASE?>assets/imagens/professores/<?php echo $info->getFotoProfessor()?>"style="width: 200px;height: 200px;border-radius: 100px;margin-left: 100px;">
 				<?php else:?>
-					<img id="img_user"class="mr-3" src="<?php echo BASE?>assets/imagens/usuario.png" style="width: 300px;height: 300px;">
+					<img id="img_user"class="mr-3" src="<?php echo BASE_PRINCIPAL?>assets/imagens/usuario.png" style="width: 300px;height: 300px;">
 				<?php endif;?>
 				<div class="media-body">
 					<form method="POST" class="form-group">

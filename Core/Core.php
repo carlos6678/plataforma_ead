@@ -4,6 +4,7 @@ class Core {
 	private static $instancia=null;
 
 	public static function getInstance(){
+		//Singleton
 		if(static::$instancia==null){
 			static::$instancia=new Core();
 		}
